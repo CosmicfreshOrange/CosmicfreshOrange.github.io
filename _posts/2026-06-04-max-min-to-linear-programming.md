@@ -1,7 +1,7 @@
 ---
 title: "非线性规划（max-min）转化为线性规划"
 description: "上海海事大学 2018 年考研试题 — max-min 型目标函数转化为标准线性规划的完整思路"
-date: 2026-06-04 23:00:00 +0800
+date: 2026-06-04 21:00:00 +0800
 categories: [运筹学]
 tags: [线性规划, 非线性规划, max-min, 考研]
 math: true
