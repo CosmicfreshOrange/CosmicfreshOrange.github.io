@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>max-min 非线性规划转化为线性规划</title>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['ams', 'base', 'newcommand']}
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root {
+    --bg: #fdf6e3;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --accent: #2980b9;
+    --border: #e0e0e0;
+    --highlight: #eaf2f8;
+    --tag: #27ae60;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    color: #1a1a1a;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; margin: 1rem 0 0.4rem; }
+  p { margin-bottom: 0.7rem; }
+  .problem {
+    background: #fffdf7;
+    border: 1px dashed #d4a017;
+    padding: 1rem 1.3rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  .highlight-box {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+    padding: 0.8rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .note {
+    background: #fff9e6;
+    border-left: 4px solid #f39c12;
+    padding: 0.7rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.8rem;
+    text-align: left;
+  }
+  th { background: #f5f7fa; font-weight: 600; }
+  .step { color: var(--tag); font-weight: 700; margin-right: 4px; }
+  ul, ol { margin: 0.4rem 0 0.7rem 1.5rem; }
+  li { margin-bottom: 0.25rem; }
+  strong { color: #c0392b; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>非线性规划（max-min）转化为线性规划</h1>
+<p class="subtitle">上海海事大学 2018 年考研试题 · 纯手写思路拆解</p>
+
+<!-- 原题 -->
+<div class="card">
+  <h2>📝 原题</h2>
+  <p>将下列问题改写成线性规划问题：</p>
+  <div class="problem">
+    \[
+    \max_{x_i} \left\{ \min \left(\sum_{i=1}^{m} a_{i1} x_i,\ \sum_{i=1}^{m} a_{i2} x_i,\ \cdots,\ \sum_{i=1}^{m} a_{in} x_i\right) \right\}
+    \]
+    \[
+    \text{s.t.} \quad
+    \begin{cases}
+    x_1 + x_2 + \cdots + x_m = 1 \\[6pt]
+    x_i \geqslant 0 \quad (i = 1, 2, \cdots, m)
+    \end{cases}
+    \]
+  </div>
+</div>
+
+<!-- 难点 -->
+<div class="card">
+  <h2>🔍 难点分析</h2>
+  <p>目标函数是一个 <strong>max-min</strong> 结构——先对 $n$ 个线性表达式取最小，再对这个最小值求最大。这种嵌套结构是<strong>非线性</strong>的，不能直接用单纯形法求解。</p>
+</div>
+
+<!-- 转化思路 -->
+<div class="card">
+  <h2>🧠 转化思路</h2>
+
+  <div class="highlight-box">
+    核心技巧：引入辅助变量 $v$，将 <strong>min 的"取最小值"逻辑拆解为一组不等式约束</strong>。
+  </div>
+
+  <h3><span class="step">①</span> 令 $v$ 等于那个 min</h3>
+  \[
+  v = \min\left(\sum_{i=1}^{m} a_{i1} x_i,\ \sum_{i=1}^{m} a_{i2} x_i,\ \cdots,\ \sum_{i=1}^{m} a_{in} x_i\right)
+  \]
+  <p>此时目标函数变为：</p>
+  \[
+  \max\ z = v
+  \]
+
+  <h3><span class="step">②</span> 把 min 的含义写成约束</h3>
+  <p>如果 $v$ 是这 $n$ 个表达式的最小值，那意味着 <strong>$v$ 小于等于其中每一个表达式</strong>：</p>
+  \[
+  v \leqslant \sum_{i=1}^{m} a_{ij} x_i \quad (j = 1, 2, \cdots, n)
+  \]
+  <p>等价写成常见形式：</p>
+  \[
+  \sum_{i=1}^{m} a_{ij} x_i \geqslant v \quad (j = 1, 2, \cdots, n)
+  \]
+
+  <h3><span class="step">③</span> 为什么这样等价？</h3>
+  <ul>
+    <li>目标 $\max\ v$ 会把 $v$ 往<strong>上推</strong>。</li>
+    <li>但约束 $\sum a_{ij}x_i \geqslant v$ 限制了 $v$ 不能超过任何一个表达式。</li>
+    <li>在最优解处，$v$ 自然等于所有 $\sum a_{ij}x_i$ 中的最小值——正好还原了原问题的 max-min 语义。</li>
+  </ul>
+</div>
+
+<!-- 最终形式 -->
+<div class="card">
+  <h2>✅ 最终线性规划形式</h2>
+  \[
+  \max\ z = v
+  \]
+  \[
+  \text{s.t.} \quad
+  \begin{cases}
+  \displaystyle\sum_{i=1}^{m} a_{ij} x_i \geqslant v \quad (j = 1, 2, \cdots, n) \\[14pt]
+  x_1 + x_2 + \cdots + x_m = 1 \\[6pt]
+  x_i \geqslant 0 \quad (i = 1, 2, \cdots, m) \\[6pt]
+  v \text{ 无非负限制（自由变量）}
+  \end{cases}
+  \]
+
+  <div class="note">
+    ⚠️ <strong>注意</strong>：$v$ 是自由变量（没有 $\geqslant 0$ 的限制）。如果题目要求所有变量非负，令 $v = v_1 - v_2$，其中 $v_1, v_2 \geqslant 0$，代入即可。
+  </div>
+</div>
+
+<!-- 小结 -->
+<div class="card">
+  <h2>📋 小结</h2>
+  <table>
+    <thead>
+      <tr><th>步骤</th><th>操作</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>① 引入变量</td><td>令 $v = \min(\cdots)$</td></tr>
+      <tr><td>② 重构目标</td><td>$\max\ z = v$</td></tr>
+      <tr><td>③ 拆 min 为约束</td><td>$n$ 个不等式：$\sum a_{ij}x_i \geqslant v$</td></tr>
+      <tr><td>④ 保留原约束</td><td>$x_1+\cdots+x_m=1,\ x_i \geqslant 0$</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:0.8rem">这类 <strong>max-min → 线性规划</strong> 的转换是考研常考题型，本质就是把"取最小值"用一组不等式约束来表达，然后借助目标函数 $\max\ v$ 自动把 $v$ 顶到 min 的位置。</p>
+  <p style="color:var(--muted);font-size:0.9rem">
+    📐 约束数量核对：$\sum_{i=1}^{m} a_{ij} x_i \geqslant v$ 共 $n$ 个，对应 $j = 1,2,\cdots,n$。
+  </p>
+</div>
+
+</div>
+</body>
+</html>
