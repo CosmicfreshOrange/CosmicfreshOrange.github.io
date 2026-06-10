@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>匈牙利算法 — 北邮2019考研题详解</title>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      packages: {'[+]': ['ams', 'base', 'newcommand']}
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root {
+    --bg: #fdf6e3;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --muted: #7f8c8d;
+    --accent: #2980b9;
+    --border: #e0e0e0;
+    --highlight: #eaf2f8;
+    --tag: #27ae60;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.85;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    color: #1a1a1a;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 0.6rem;
+  }
+  h3 { font-size: 1.05rem; margin: 1rem 0 0.4rem; }
+  p { margin-bottom: 0.7rem; }
+  .problem {
+    background: #fffdf7;
+    border: 1px dashed #d4a017;
+    padding: 1rem 1.3rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  .highlight-box {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+    padding: 0.8rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .note {
+    background: #fff9e6;
+    border-left: 4px solid #f39c12;
+    padding: 0.7rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  .success-box {
+    background: #e8f5e9;
+    border-left: 4px solid #27ae60;
+    padding: 0.8rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .danger-box {
+    background: #fdedec;
+    border-left: 4px solid #e74c3c;
+    padding: 0.8rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.8rem;
+    text-align: left;
+  }
+  th { background: #f5f7fa; font-weight: 600; }
+  .step { color: var(--tag); font-weight: 700; margin-right: 4px; }
+  ul, ol { margin: 0.4rem 0 0.7rem 1.5rem; }
+  li { margin-bottom: 0.25rem; }
+  strong { color: #c0392b; }
+  .matrix-box { overflow-x: auto; margin: 0.8rem 0; }
+
+  .answer-card {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border: 2px solid #27ae60;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  .answer-card .big { font-size: 1.3rem; color: #1b5e20; font-weight: 700; }
+
+  .flow-chart {
+    text-align: center;
+    font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+    font-size: 0.85rem;
+    background: #faf3e0;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🇭🇺 匈牙利算法</h1>
+<p class="subtitle">北京邮电大学 2019 年考研试题 · 第 5 章整数规划 · P182 第 1 题</p>
+
+<!-- 原题 -->
+<div class="card">
+  <h2>📝 原题</h2>
+  <p>有四项工作要完成，每项工作只允许一个人完成，且每个人只能完成一项工作。已知每个人完成各项工作的时间如 <strong>表 5.12</strong> 所示。问应派哪个人完成哪项工作，使总时间最小，并求出总时间。</p>
+
+  <table>
+    <tr><th>人员 \ 工作</th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+    <tr><td><b>甲</b></td><td>6</td><td>3</td><td>10</td><td>4</td></tr>
+    <tr><td><b>乙</b></td><td>11</td><td>10</td><td>6</td><td>9</td></tr>
+    <tr><td><b>丙</b></td><td>10</td><td>6</td><td>8</td><td>5</td></tr>
+    <tr><td><b>丁</b></td><td>8</td><td>7</td><td>9</td><td>4</td></tr>
+  </table>
+</div>
+
+<!-- 方法概述 -->
+<div class="card">
+  <h2>🧭 方法概述</h2>
+  <p>匈牙利算法用于求解 <strong>标准指派问题</strong>（人数 = 工作数，求极小值）。核心：对效率矩阵进行等价变换，使变换后的矩阵能选出 <strong>n 个位于不同行不同列的零元素</strong>，即为最优分配。</p>
+
+  <div class="flow-chart">① 行变换 → ② 列变换 → ③ 试指派 → ④ 画覆盖线 → ⑤ 调整矩阵
+                                    ↑        ↓                │
+                                    └── 独立零数 &lt; n ────────┘
+                                    ↓ 独立零数 = n
+                                  ✅ 输出最优解</div>
+</div>
+
+<!-- Step 1 -->
+<div class="card">
+  <h2><span class="step">Step 1</span> 行变换 — 每行减该行最小值</h2>
+
+  <p><strong>目的：</strong>让每行至少出现一个零。</p>
+
+  <div class="matrix-box">
+    \[
+    C^{(0)} = \begin{bmatrix}
+    6  & 3  & 10 & 4  \\
+    11 & 10 & 6  & 9  \\
+    10 & 6  & 8  & 5  \\
+    8  & 7  & 9  & 4
+    \end{bmatrix}
+    \]
+  </div>
+
+  <table>
+    <tr><th>行</th><th>该行元素</th><th>最小值</th></tr>
+    <tr><td>甲</td><td>6, 3, 10, 4</td><td><b>3</b></td></tr>
+    <tr><td>乙</td><td>11, 10, 6, 9</td><td><b>6</b></td></tr>
+    <tr><td>丙</td><td>10, 6, 8, 5</td><td><b>5</b></td></tr>
+    <tr><td>丁</td><td>8, 7, 9, 4</td><td><b>4</b></td></tr>
+  </table>
+
+  <div class="matrix-box">
+    \[
+    C^{(1)} = \begin{bmatrix}
+    6-3  & 3-3  & 10-3 & 4-3 \\
+    11-6 & 10-6 & 6-6  & 9-6 \\
+    10-5 & 6-5  & 8-5  & 5-5 \\
+    8-4  & 7-4  & 9-4  & 4-4
+    \end{bmatrix}
+    = \begin{bmatrix}
+    3 & 0 & 7 & 1 \\
+    5 & 4 & 0 & 3 \\
+    5 & 1 & 3 & 0 \\
+    4 & 3 & 5 & 0
+    \end{bmatrix}
+    \]
+  </div>
+</div>
+
+<!-- Step 2 -->
+<div class="card">
+  <h2><span class="step">Step 2</span> 列变换 — 每列减该列最小值</h2>
+
+  <p><strong>目的：</strong>让每列也至少出现一个零。已有零的列最小值为 0，跳过。</p>
+
+  <table>
+    <tr><th>列</th><th>该列元素</th><th>最小值</th></tr>
+    <tr><td>A</td><td>3, 5, 5, 4</td><td><b>3</b></td></tr>
+    <tr><td>B</td><td>0, 4, 1, 3</td><td><b>0</b>（已有零）</td></tr>
+    <tr><td>C</td><td>7, 0, 3, 5</td><td><b>0</b>（已有零）</td></tr>
+    <tr><td>D</td><td>1, 3, 0, 0</td><td><b>0</b>（已有零）</td></tr>
+  </table>
+
+  <div class="matrix-box">
+    \[
+    C^{(2)} = \begin{bmatrix}
+    3-3 & 0   & 7   & 1   \\
+    5-3 & 4   & 0   & 3   \\
+    5-3 & 1   & 3   & 0   \\
+    4-3 & 3   & 5   & 0
+    \end{bmatrix}
+    = \begin{bmatrix}
+    0 & 0 & 7 & 1 \\
+    2 & 4 & 0 & 3 \\
+    2 & 1 & 3 & 0 \\
+    1 & 3 & 5 & 0
+    \end{bmatrix}
+    \]
+  </div>
+
+  <div class="success-box">✅ 每行每列都至少有一个零，满足匈牙利算法基本条件。</div>
+</div>
+
+<!-- Step 3 -->
+<div class="card">
+  <h2><span class="step">Step 3</span> 试指派 — 找独立零元素</h2>
+
+  <p>符号：<strong>⊙</strong> = 独立零（已分配）；<strong>∅</strong> = 被划去的零（与 ⊙ 同行/同列）。<br>
+  <strong>原则：</strong>从零最少的行/列开始分配（"先少后多"）。</p>
+
+  <table>
+    <tr><th>轮次</th><th>操作</th><th>理由</th></tr>
+    <tr><td>①</td><td>第 2 行只有一个零 (2,C)，标 <b>⊙</b></td><td>零最少的行优先</td></tr>
+    <tr><td>②</td><td>第 3 行 (3,D) 标 <b>⊙</b>，划去同列 (4,D) → <b>∅</b></td><td>D 列已被占用</td></tr>
+    <tr><td>③</td><td>第 1 行剩 (1,A) 标 <b>⊙</b>，划去同行 (1,B) → <b>∅</b></td><td>同行的零也要划去</td></tr>
+  </table>
+
+  <div class="matrix-box">
+    \[
+    \begin{bmatrix}
+    \odot & \varnothing & 7 & 1 \\
+    2     & 4          & \odot & 3 \\
+    2     & 1          & 3    & \odot \\
+    1     & 3          & 5    & \varnothing
+    \end{bmatrix}
+    \]
+  </div>
+
+  <div class="danger-box">独立零个数 = <strong>3</strong>，但 n = 4 → <strong>未达到最优</strong>，需继续调整。</div>
+</div>
+
+<!-- Step 4 -->
+<div class="card">
+  <h2><span class="step">Step 4</span> 画最少直线覆盖所有零</h2>
+
+  <div class="highlight-box">
+    <strong>König 定理：</strong>矩阵中最大独立零的个数 = 覆盖所有零所需的最少直线数。<br>
+    线数 = n → 已达最优；线数 &lt; n → 需调整。
+  </div>
+
+  <h3>4.1 打勾（✓）传播</h3>
+
+  <table>
+    <tr><th>序号</th><th>规则</th><th>操作</th></tr>
+    <tr><td>规则①</td><td>对<strong>没有 ⊙ 的行</strong>打勾</td><td>第 4 行无 ⊙ → ✓ 第 4 行</td></tr>
+    <tr><td>规则②</td><td>已打勾行中<strong>有零的列</strong>打勾</td><td>第 4 行 D 列有零(∅也算) → ✓ D 列</td></tr>
+    <tr><td>规则③</td><td>已打勾列中<strong>有 ⊙ 的行</strong>打勾</td><td>D 列第 3 行有 ⊙ → ✓ 第 3 行</td></tr>
+    <tr><td>规则②'</td><td>第 3 行打勾，检查其零所在列</td><td>D 列已勾 → 无新增 → 停止</td></tr>
+  </table>
+
+  <p><b>最终打勾：</b>第 3 行 ✓、第 4 行 ✓、D 列 ✓</p>
+
+  <h3>4.2 画覆盖线</h3>
+  <ul>
+    <li><strong>横线</strong> = 没打勾的行 → 第 1 行、第 2 行</li>
+    <li><strong>竖线</strong> = 打了勾的列 → D 列</li>
+  </ul>
+  <p>共用 <strong>3 条线</strong>覆盖全部零 → 等于独立零数 3，König 验证 ✓。但 3 &lt; 4，仍需调整。</p>
+
+  <div class="note">⚠️ 记忆口诀：没⊙行打勾 → 有零列打勾 → 有⊙行打勾 → 循环到稳定。横线画没勾的行，竖线画有勾的列，<strong>千万别反！</strong></div>
+</div>
+
+<!-- Step 5 -->
+<div class="card">
+  <h2><span class="step">Step 5</span> 调整矩阵 — 产生新的零</h2>
+
+  <h3>5.1 找 δ（未覆盖中的最小值）</h3>
+  <p>未覆盖位置 = 第 3、4 行 × A、B、C 列：</p>
+  \[
+  \delta = \min\begin{Bmatrix}(3,A)=2 & (3,B)=1 & (3,C)=3 \\ (4,A)=1 & (4,B)=3 & (4,C)=5\end{Bmatrix} = 1
+  \]
+
+  <h3>5.2 调整规则</h3>
+  <table>
+    <tr><th>位置类型</th><th>判断</th><th>操作</th></tr>
+    <tr><td><b>未覆盖</b></td><td>无线穿过</td><td style="color:#e74c3c">减去 δ = 1</td></tr>
+    <tr><td><b>交叉处</b></td><td>横线 + 竖线同时穿过</td><td style="color:#27ae60">加上 δ = 1</td></tr>
+    <tr><td><b>单线覆盖</b></td><td>只被一条线穿过</td><td>不变</td></tr>
+  </table>
+
+  <table>
+    <tr><th>元素</th><th>横线</th><th>竖线</th><th>类型</th><th>变化</th></tr>
+    <tr><td>(1,A)~(1,C)</td><td>✓</td><td>✗</td><td>单线</td><td>不变</td></tr>
+    <tr><td>(1,D)</td><td>✓</td><td>✓</td><td>交叉</td><td style="color:#27ae60">+1</td></tr>
+    <tr><td>(2,A)~(2,C)</td><td>✓</td><td>✗</td><td>单线</td><td>不变</td></tr>
+    <tr><td>(2,D)</td><td>✓</td><td>✓</td><td>交叉</td><td style="color:#27ae60">+1</td></tr>
+    <tr><td>(3,A)~(3,C)</td><td>✗</td><td>✗</td><td>未覆盖</td><td style="color:#e74c3c">−1</td></tr>
+    <tr><td>(3,D)</td><td>✗</td><td>✓</td><td>单线</td><td>不变</td></tr>
+    <tr><td>(4,A)~(4,C)</td><td>✗</td><td>✗</td><td>未覆盖</td><td style="color:#e74c3c">−1</td></tr>
+    <tr><td>(4,D)</td><td>✗</td><td>✓</td><td>单线</td><td>不变</td></tr>
+  </table>
+
+  <h3>5.3 新矩阵</h3>
+  \[
+  C^{(3)} = \begin{bmatrix}
+  0      & 0      & 7      & 1+1=2 \\
+  2      & 4      & 0      & 3+1=4 \\
+  2-1=1  & 1-1=0  & 3-1=2  & 0     \\
+  1-1=0  & 3-1=2  & 5-1=4  & 0
+  \end{bmatrix}
+  = \begin{bmatrix}
+  0 & 0 & 7 & 2 \\
+  2 & 4 & 0 & 4 \\
+  1 & 0 & 2 & 0 \\
+  0 & 2 & 4 & 0
+  \end{bmatrix}
+  \]
+
+  <div class="success-box">✅ (3,B) 和 (4,A) 处产生新零！有望凑齐 n=4 个独立零。</div>
+</div>
+
+<!-- Step 3' -->
+<div class="card">
+  <h2><span class="step">Step 3'</span> 再次试指派 — 得到最优解</h2>
+
+  <h3>方案一</h3>
+  <p>标记顺序：(2,C) → ⊙、(3,B) → ⊙、(1,A) → ⊙、(4,D) → ⊙</p>
+
+  \[
+  \begin{bmatrix}
+  \odot & \varnothing & 7 & 2 \\
+  2     & 4          & \odot & 4 \\
+  1     & \odot      & 2    & \varnothing \\
+  \varnothing & 2   & 4    & \odot
+  \end{bmatrix}
+  \]
+
+  <table>
+    <tr><th>人员</th><th>工作</th><th>时间</th></tr>
+    <tr><td>甲 → A</td><td>(1,A)</td><td><b>6</b></td></tr>
+    <tr><td>乙 → C</td><td>(2,C)</td><td><b>6</b></td></tr>
+    <tr><td>丙 → B</td><td>(3,B)</td><td><b>6</b></td></tr>
+    <tr><td>丁 → D</td><td>(4,D)</td><td><b>4</b></td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>22</b></td></tr>
+  </table>
+
+  <h3>方案二（等价最优解）</h3>
+  <p>标记顺序：(2,C) → ⊙、(1,B) → ⊙、(3,D) → ⊙、(4,A) → ⊙</p>
+
+  \[
+  \begin{bmatrix}
+  \varnothing & \odot      & 7 & 2 \\
+  2           & 4          & \varnothing & 4 \\
+  1           & \varnothing & 2 & \odot \\
+  \odot       & 2          & 4 & \varnothing
+  \end{bmatrix}
+  \]
+
+  <table>
+    <tr><th>人员</th><th>工作</th><th>时间</th></tr>
+    <tr><td>甲 → B</td><td>(1,B)</td><td><b>3</b></td></tr>
+    <tr><td>乙 → C</td><td>(2,C)</td><td><b>6</b></td></tr>
+    <tr><td>丙 → D</td><td>(3,D)</td><td><b>5</b></td></tr>
+    <tr><td>丁 → A</td><td>(4,A)</td><td><b>8</b></td></tr>
+    <tr><td colspan="2"><b>合计</b></td><td><b>22</b></td></tr>
+  </table>
+</div>
+
+<!-- 最终答案 -->
+<div class="answer-card">
+  <p class="big">🎯 最小总时间 = <strong>22</strong></p>
+  <p><b>方案一：</b>甲→A，乙→C，丙→B，丁→D &nbsp;(6+6+6+4=22)</p>
+  <p><b>方案二：</b>甲→B，乙→C，丙→D，丁→A &nbsp;(3+6+5+8=22)</p>
+  <p style="font-size:0.85rem;margin-top:0.5rem">两种方案均为最优解，考试任写其一即可。</p>
+</div>
+
+<!-- 总结 -->
+<div class="card">
+  <h2>📋 方法总结</h2>
+
+  <table>
+    <tr><th>步骤</th><th>操作</th><th>关键</th></tr>
+    <tr><td>① 行变换</td><td>每行 − 行最小值</td><td>每行至少一个零</td></tr>
+    <tr><td>② 列变换</td><td>每列 − 列最小值</td><td>每列至少一个零</td></tr>
+    <tr><td>③ 试指派</td><td>找 n 个独立零 ⊙</td><td>从零最少行/列开始</td></tr>
+    <tr><td>④ 覆盖检验</td><td>打勾→画线→数线</td><td>线数=n 停止，&lt;n 调整</td></tr>
+    <tr><td>⑤ 调整矩阵</td><td>未覆盖 −δ，交叉 +δ</td><td>δ = 未覆盖中的最小值</td></tr>
+  </table>
+
+  <h3>⚠️ 五大易错点</h3>
+  <ol>
+    <li><b>打勾方向</b>：无⊙行 ✓ → 有零列 ✓ → 有⊙行 ✓ → 循环</li>
+    <li><b>画线方向</b>：横线 = 没✓的行，竖线 = 有✓的列（千万别反！）</li>
+    <li><b>∅ 也算零</b>：被划去的零在打勾和画线时依然参与</li>
+    <li><b>调整范围</b>：仔细区分"未覆盖""单线覆盖""交叉"三类</li>
+    <li><b>等价最优解</b>：试指派多路径时可能有多个最优解，不要漏</li>
+  </ol>
+
+  <h3>⏱️ 建议答题节奏</h3>
+  <table>
+    <tr><td>行变换 + 列变换</td><td>1~2 min</td></tr>
+    <tr><td>试指派</td><td>2~3 min</td></tr>
+    <tr><td>画覆盖线 + 调整</td><td>3~4 min</td></tr>
+    <tr><td>再次试指派 + 整理答案</td><td>2~3 min</td></tr>
+    <tr><td><b>合计</b></td><td><b>8~12 min</b></td></tr>
+  </table>
+</div>
+
+</div>
+</body>
+</html>
