@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民法学·考前冲刺复习手册</title>
+<style>
+:root {
+  --bg: #fdfaf5;
+  --card: #fffef9;
+  --text: #2c2416;
+  --text2: #5c4f3a;
+  --accent: #8b1a1a;
+  --gold: #c4943a;
+  --warm: #d4722a;
+  --green: #2d6a4f;
+  --border: #e5d9c4;
+  --red-bg: #fef5f4;
+  --red-border: #f3c8c4;
+  --amber-bg: #fffcf0;
+  --amber-border: #eed9a8;
+  --green-bg: #f4faf6;
+  --green-border: #b8d9c5;
+  --shadow: 0 1px 3px rgba(44,36,22,0.06), 0 1px 2px rgba(44,36,22,0.04);
+  --shadow-md: 0 4px 12px rgba(44,36,22,0.08), 0 2px 4px rgba(44,36,22,0.04);
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font-heading: 'Georgia', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+  --font-body: 'Georgia', 'Noto Serif SC', 'Source Han Serif SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --nav-w: 260px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:17px}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse at 20% 5%, rgba(196,148,58,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 95%, rgba(139,26,26,0.03) 0%, transparent 60%);
+}
+
+/* ── Navigation ── */
+nav{
+  position:fixed; top:0; left:0; width:var(--nav-w); height:100vh;
+  background:linear-gradient(175deg, #3d2e1a 0%, #2c1f0e 100%);
+  color:#e5d5b8; overflow-y:auto; z-index:100;
+  padding:28px 20px 40px;
+  border-right:1px solid rgba(196,148,58,0.2);
+  transition:transform .3s;
+}
+nav h2{
+  font-family:var(--font-heading);
+  font-size:1.2rem; font-weight:700; color:#f0e2c8;
+  text-align:center; margin-bottom:6px; letter-spacing:0.06em;
+}
+nav .sub{text-align:center;font-size:.75rem;color:#b8956a;margin-bottom:22px}
+nav a{
+  display:block; color:#c8b58a; text-decoration:none; padding:7px 12px;
+  border-radius:var(--radius-sm); font-size:.82rem; transition:all .2s;
+  border-left:2px solid transparent; margin-bottom:2px;
+}
+nav a:hover, nav a.active{color:#f5e6c8;background:rgba(255,255,255,0.06);border-left-color:var(--gold)}
+nav .cat{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#9b7d55;margin:18px 0 6px 12px;font-weight:700}
+nav .badge{display:inline-block;font-size:.6rem;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
+.badge-red{background:rgba(220,80,60,0.25);color:#f0a090}
+.badge-amber{background:rgba(200,160,60,0.25);color:#e8cd80}
+.badge-green{background:rgba(80,160,100,0.25);color:#a0d8b0}
+
+/* ── Main ── */
+main{margin-left:var(--nav-w);max-width:960px;padding:36px 40px 80px}
+header.hero{
+  text-align:center; padding:48px 20px 36px;
+  border-bottom:2px solid var(--border); margin-bottom:40px;
+  position:relative;
+}
+header.hero::after{
+  content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);
+  width:80px;height:2px;background:var(--accent);
+}
+header.hero h1{
+  font-family:var(--font-heading); font-size:2.4rem; font-weight:900;
+  color:#3d2e1a; letter-spacing:.04em; margin-bottom:6px;
+}
+header.hero .exam-date{
+  display:inline-block; background:var(--accent); color:#fff;
+  padding:6px 18px; border-radius:20px; font-size:.85rem; font-weight:600;
+  margin-top:8px; letter-spacing:.04em;
+}
+header.hero .countdown{font-size:.9rem;color:var(--text2);margin-top:10px}
+header.hero .countdown span{color:var(--accent);font-weight:700;font-size:1.1rem}
+
+/* ── Section Title ── */
+.sec-title{
+  font-family:var(--font-heading); font-size:1.6rem; font-weight:800;
+  margin:44px 0 10px; padding-bottom:10px;
+  border-bottom:1px solid var(--border); color:#3d2e1a;
+  display:flex; align-items:center; gap:10px;
+}
+.sec-title .num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px;height:38px;border-radius:50%; font-size:.95rem;font-weight:700;color:#fff;
+  flex-shrink:0;
+}
+.sec-title .num.red{background:var(--accent)}
+.sec-title .num.amber{background:var(--warm)}
+.sec-title .num.green{background:var(--green)}
+
+.sec-sub{font-size:.88rem;color:var(--text2);margin-bottom:16px}
+
+/* ── Cards ── */
+.card{
+  background:var(--card); border-radius:var(--radius); padding:24px 28px;
+  margin-bottom:18px; box-shadow:var(--shadow);
+  border:1px solid var(--border); transition:box-shadow .2s;
+}
+.card:hover{box-shadow:var(--shadow-md)}
+.card h3{
+  font-family:var(--font-heading); font-size:1.1rem; font-weight:700;
+  margin-bottom:12px; display:flex; align-items:center; gap:8px;
+}
+.card h3 .icon{font-size:1.3rem}
+.card .stars{color:var(--gold);font-size:.75rem;letter-spacing:2px;margin-left:auto}
+
+.card.red{border-left:4px solid var(--accent); background:var(--red-bg); border-color:var(--red-border)}
+.card.amber{border-left:4px solid var(--warm); background:var(--amber-bg); border-color:var(--amber-border)}
+.card.green{border-left:4px solid var(--green); background:var(--green-bg); border-color:var(--green-border)}
+
+/* ── Tables ── */
+.table-wrap{overflow-x:auto;margin:12px 0}
+table{
+  width:100%;border-collapse:collapse;font-size:.85rem;
+  border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);
+}
+thead{background:#3d2e1a;color:#f0e2c8}
+th{padding:10px 14px;text-align:left;font-weight:600;font-size:.8rem;letter-spacing:.04em}
+td{padding:9px 14px;border-bottom:1px solid var(--border)}
+tbody tr:nth-child(even){background:rgba(196,148,58,0.05)}
+tbody tr:hover{background:rgba(196,148,58,0.1)}
+
+/* ── Question Cards ── */
+.q-card{
+  background:#fffef9; border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px 24px; margin:12px 0;
+  box-shadow:var(--shadow); position:relative;
+}
+.q-card::before{
+  content:'📝'; position:absolute; top:-12px; left:16px;
+  font-size:1.4rem; background:var(--bg); padding:0 6px;
+}
+.q-card .q-title{font-weight:700;color:#3d2e1a;margin-bottom:8px;padding-top:6px}
+.q-card .q-body{font-size:.88rem;color:var(--text2);margin-bottom:10px}
+.q-card .q-opts{margin:6px 0;padding-left:8px}
+.q-card .q-opts span{display:block;padding:2px 0;font-size:.85rem}
+.ans-toggle{
+  display:inline-block; background:var(--accent); color:#fff; border:none;
+  padding:7px 20px; border-radius:20px; font-size:.82rem; cursor:pointer;
+  font-weight:600; transition:all .2s; letter-spacing:.03em;
+  margin-top:6px;
+}
+.ans-toggle:hover{background:#a01e1e;transform:translateY(-1px)}
+.ans-toggle.shown{background:var(--green)}
+.ans-content{
+  display:none; margin-top:12px; padding:16px 18px;
+  background:#f8f5ed; border-radius:var(--radius-sm);
+  border-left:3px solid var(--green); font-size:.85rem; line-height:1.7;
+}
+.ans-content.show{display:block}
+.ans-content .correct{color:var(--green);font-weight:700}
+
+/* ── Tags ── */
+.tag{
+  display:inline-block; padding:2px 10px; border-radius:12px;
+  font-size:.72rem; font-weight:700; letter-spacing:.04em;
+}
+.tag-red{background:rgba(220,80,60,0.12);color:var(--accent)}
+.tag-amber{background:rgba(200,140,40,0.12);color:var(--warm)}
+.tag-green{background:rgba(60,140,80,0.12);color:var(--green)}
+
+/* ── Highlight Box ── */
+.highlight{
+  background:linear-gradient(135deg, #fff8ed, #fff3e0);
+  border:1px solid #edd5a0; border-radius:var(--radius-sm);
+  padding:14px 18px; margin:10px 0; font-size:.85rem;
+}
+.highlight strong{color:var(--accent)}
+.highlight .hl-title{font-weight:700;color:#8b6914;margin-bottom:4px}
+
+/* ── Back to Top ── */
+#btt{
+  position:fixed; bottom:32px; right:32px; width:44px;height:44px;
+  border-radius:50%; background:var(--accent); color:#fff; border:none;
+  font-size:1.2rem; cursor:pointer; box-shadow:0 3px 10px rgba(139,26,26,0.3);
+  opacity:0; transform:translateY(20px); transition:all .3s; z-index:200;
+}
+#btt.visible{opacity:1;transform:translateY(0)}
+#btt:hover{background:#a01e1e;transform:translateY(-3px)}
+
+/* ── Progress ── */
+#progress{
+  position:fixed; top:0; left:0; height:3px;
+  background:linear-gradient(90deg, var(--accent), var(--gold));
+  z-index:300; transition:width .15s linear;
+}
+
+/* ── Print ── */
+@media print{
+  nav,#btt,#progress{display:none!important}
+  main{margin-left:0;padding:20px}
+  .card,.q-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  .ans-content{display:block!important}
+  .ans-toggle{display:none}
+  body{font-size:12pt;line-height:1.6}
+}
+
+/* ── Mobile ── */
+@media (max-width:860px){
+  nav{
+    transform:translateX(-100%);
+    width:100%;max-width:300px;
+  }
+  nav.open{transform:translateX(0)}
+  main{margin-left:0;padding:20px 16px 60px}
+  header.hero h1{font-size:1.5rem}
+  .card{padding:16px}
+  #menu-btn{
+    display:flex; position:fixed; top:12px; left:12px; z-index:250;
+    width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;
+    border:none;font-size:1.2rem;cursor:pointer;align-items:center;justify-content:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+}
+@media (min-width:861px){#menu-btn{display:none}}
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div id="progress"></div>
+
+<!-- Mobile menu button -->
+<button id="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="菜单">☰</button>
+
+<!-- Navigation -->
+<nav id="nav">
+  <h2>民法学</h2>
+  <div class="sub">考前冲刺 · 6月16日</div>
+
+  <div class="cat">🔴 物权编（60分）</div>
+  <a href="#s1">物权与债权区别 <span class="badge badge-red">必考</span></a>
+  <a href="#s2">物权法三大原则 <span class="badge badge-red">必考</span></a>
+  <a href="#s3">物权变动模式 <span class="badge badge-red">必考</span></a>
+  <a href="#s4">善意取得制度 <span class="badge badge-red">必考</span></a>
+  <a href="#s5">按份共有与共同共有 <span class="badge badge-red">必考</span></a>
+  <a href="#s6">担保物权对比 <span class="badge badge-amber">高频</span></a>
+  <a href="#s7">建筑物区分所有权 <span class="badge badge-amber">高频</span></a>
+  <a href="#s8">相邻关系 <span class="badge badge-amber">高频</span></a>
+  <a href="#s9">所有权取得方式 <span class="badge badge-green">重点</span></a>
+
+  <div class="cat">🟡 总则编（40分）</div>
+  <a href="#s10">民法七大原则 <span class="badge badge-red">必考</span></a>
+  <a href="#s11">民事法律关系 <span class="badge badge-red">必考</span></a>
+  <a href="#s12">民事行为能力 <span class="badge badge-red">必考</span></a>
+  <a href="#s13">监护制度 <span class="badge badge-amber">高频</span></a>
+  <a href="#s14">宣告失踪与死亡 <span class="badge badge-amber">高频</span></a>
+  <a href="#s15">法人分类 <span class="badge badge-amber">高频</span></a>
+  <a href="#s16">民事权利分类 <span class="badge badge-green">重点</span></a>
+
+  <div class="cat">📋 附录</div>
+  <a href="#f1">必背法条号</a>
+  <a href="#f2">记忆口诀</a>
+</nav>
+
+<!-- Main Content -->
+<main>
+
+<!-- Hero -->
+<header class="hero">
+  <h1>民法学·考前冲刺复习手册</h1>
+  <div class="exam-date">📅 考试时间：6月16日晚</div>
+  <div class="countdown">距考试还有 <span>2</span> 天 | 共20个核心知识点 · 32道真题</div>
+</header>
+
+<!-- ==================== 物权编 ==================== -->
+
+<div class="sec-title"><span class="num red">物</span> 物权编（预计60分）</div>
+<div class="sec-sub">物权编是本次考试的重中之重，尤其物权变动模式、善意取得、共有制度和担保物权必须熟练掌握</div>
+
+<!-- 知识点1: 物权与债权区别 -->
+<div class="card red" id="s1">
+<h3><span class="icon">⚖️</span> 1. 物权与债权的区别 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>对比维度</th><th>物权</th><th>债权</th></tr></thead>
+<tbody>
+<tr><td><strong>权利性质</strong></td><td>支配权</td><td>请求权</td></tr>
+<tr><td><strong>效力范围</strong></td><td>对世权 / 绝对权</td><td>对人权 / 相对权</td></tr>
+<tr><td><strong>排他性</strong></td><td>✅ 有排他性（一物一权）</td><td>❌ 平等性</td></tr>
+<tr><td><strong>公示性</strong></td><td>✅ 登记或交付公示</td><td>❌ 非公开性</td></tr>
+<tr><td><strong>法定 vs 自由</strong></td><td>物权法定原则</td><td>意思自治原则</td></tr>
+<tr><td><strong>客体</strong></td><td>以物为主</td><td>以行为为客体</td></tr>
+<tr><td><strong>存续期限</strong></td><td>永久性 / 无期限</td><td>有特定期限</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">📌 口诀记忆</div>物权 = <strong>支配 + 对世 + 排他 + 法定</strong>｜债权 = <strong>请求 + 对人 + 平等 + 自治</strong></div>
+</div>
+
+<!-- 知识点2: 物权法三大原则 -->
+<div class="card red" id="s2">
+<h3><span class="icon">📐</span> 2. 物权法三大基本原则 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>原则</th><th>核心内容</th><th>法条</th></tr></thead>
+<tbody>
+<tr><td><strong>① 平等保护原则</strong></td><td>国家、集体、私人物权受法律平等保护</td><td>第3条</td></tr>
+<tr><td><strong>② 物权法定原则</strong></td><td>物权的<strong>种类</strong>和<strong>内容</strong>由法律规定，禁止当事人自由创设</td><td>第116条</td></tr>
+<tr><td><strong>③ 公示公信原则</strong></td><td><strong>公示</strong>：不动产登记 / 动产交付；<strong>公信</strong>：信赖公示内容受法律保护</td><td>第208-209条</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">⚠️ 特别注意</div>违反物权法定原则 → 区分"种类法定"和"内容法定"分别确定法律后果。物权法定包括：<strong>种类法定 + 内容法定 + 效力法定</strong></div>
+</div>
+
+<!-- 知识点3: 物权变动模式 -->
+<div class="card red" id="s3">
+<h3><span class="icon">🔄</span> 3. 物权变动模式 <span class="stars">★★★★★</span></h3>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>变动要件</th><th>法条</th></tr></thead>
+<tbody>
+<tr><td><strong>不动产物权变动</strong></td><td>🏠 <strong>登记生效主义</strong>——不登记，物权不变动</td><td>第209条</td></tr>
+<tr><td><strong>普通动产物权变动</strong></td><td>📦 <strong>交付生效主义</strong>——交付即发生物权变动</td><td>第224条</td></tr>
+<tr><td><strong>特殊动产物权变动</strong><br>(船舶、航空器、机动车)</td><td>🚗 <strong>登记对抗主义</strong>——交付即变动，但不登记不得对抗善意第三人</td><td>第225条</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">⚠️ 非基于法律行为的物权变动</div>继承、法院判决、征收、合法建造/拆除——<strong>事实发生时</strong>即取得物权，但再处分时必须先登记！</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题1：郑某继承房屋 + 抵押案</div>
+<div class="q-body">郑某因公司资金困难，其父将3年前25万元购买的房屋卖给吴某，但未来得及登记即因车祸去世。郑某继承房屋并办理登记后，以该房屋抵押给关某借款10万元，但<strong>未办理抵押登记</strong>。</div>
+<div class="q-opts"><span>A. 郑某父亲与吴某的房屋买卖合同有效</span><span>B. 郑某享有房屋所有权</span><span>C. 郑某父亲去世后有义务协助吴某办过户</span><span>D. 关某对房屋不享有抵押权</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ 答案：ABCD 全选</span><br>
+<strong>解析：</strong>A ✓ 合同效力与登记无关（区分原则）；B ✓ 郑某通过继承取得所有权；C ✓ 继承人应继续履行被继承人合同义务；D ✓ <strong>不动产抵押权自登记时设立</strong>，未登记=无抵押权。
+</div>
+</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题2：特殊动产——赵某购车案</div>
+<div class="q-body">赵某向姚某购买轿车一辆，付清全款并已交付，但<strong>未办理过户登记</strong>。后姚某因欠款被诉，法院依申请查封了仍登记在姚某名下的该车。赵某提出异议。</div>
+<div class="q-opts"><span>问：赵某能否对抗法院的查封？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ 不能对抗</span><br>
+<strong>解析：</strong>机动车为特殊动产，采取<strong>登记对抗主义</strong>。虽已交付取得所有权，但未办理过户登记，<strong>不得对抗善意第三人</strong>（包括法院查封）。物权区分原则（第215条）：合同有效 ≠ 物权已转移至可对抗第三人的程度。
+</div>
+</div>
+</div>
+
+<!-- 知识点4: 善意取得 -->
+<div class="card red" id="s4">
+<h3><span class="icon">🛡️</span> 4. 善意取得制度 <span class="stars">★★★★★</span></h3>
+<div class="highlight"><div class="hl-title">📜《民法典》第311条——五个构成要件</div>
+① 让与人<strong>无处分权</strong>｜② 受让人受让时为<strong>善意</strong>（不知情）｜③ 以<strong>合理的价格</strong>有偿转让｜④ 已完成<strong>公示</strong>（不动产登记/动产交付）｜⑤ 转让合同<strong>有效</strong></div>
+<div class="highlight"><div class="hl-title">❌ 不适用善意取得</div>遗失物（2年内可追回）、所有权保留买卖未付清全款、无偿赠与、盗赃物</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题3：夫妻共有房屋被一方出售</div>
+<div class="q-body">甲、乙婚后购得房屋一套，仅以甲的名义登记。后甲、乙感情不和，甲擅自将该房屋以时价出售给<strong>不知情</strong>的丙，并<strong>办理了转移登记</strong>。</div>
+<div class="q-opts"><span>A. 买卖合同有效，房屋所有权未转移</span><span>B. 买卖合同有效，房屋所有权已转移</span><span>C. 买卖合同有效，房屋所有权已转移</span><span>D. 买卖合同无效，房屋所有权未转移</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ 答案：C（买卖合同有效，所有权已转移）</span><br>
+<strong>解析：</strong>甲擅自处分夫妻共有财产属<strong>无权处分</strong>，但丙为善意第三人+支付合理价格+已完成登记→<strong>构成善意取得</strong>。合同效力与物权变动需区分判断。
+</div>
+</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题4：遗失物归属——手表遗失案</div>
+<div class="q-body">甲不慎遗失手表→乙拾得后交公安机关→公告期满无人认领→交寄售店出售→丁自寄售店购买→赠与女友戊→戊在公园被小偷盗走→小偷低价卖给乙→乙遇见工人丙，将手表送给丙。</div>
+<div class="q-opts"><span>问：手表最终应归谁所有？ A.甲 B.丁 C.戊 D.丙</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ 答案：C（戊所有）</span><br>
+<strong>解析：</strong>甲公告期满未认领→丧失所有权。丁从<strong>寄售店</strong>（有经营资格的经营者）购买→合法取得所有权。丁赠与戊→戊取得所有权。小偷不能取得所有权，乙从非正规渠道购得也不能取得，乙赠与丙无效。
+</div>
+</div>
+</div>
+
+<!-- 知识点5: 按份共有与共同共有 -->
+<div class="card red" id="s5">
+<h3><span class="icon">👥</span> 5. 按份共有 vs 共同共有 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>对比项</th><th>按份共有</th><th>共同共有</th></tr></thead>
+<tbody>
+<tr><td>份额</td><td>✅ 明确份额</td><td>❌ 不分份额</td></tr>
+<tr><td>基础关系</td><td>约定</td><td>共同关系（夫妻/家庭/遗产未分割前）</td></tr>
+<tr><td>处分共有物</td><td>占份额 <strong>≥2/3</strong> 同意</td><td><strong>全体共有人一致同意</strong></td></tr>
+<tr><td>份额转让</td><td>其他共有人有<strong>优先购买权</strong></td><td>共有基础丧失前无优先购买权</td></tr>
+<tr><td>随时分割</td><td>✅ 可随时请求分割</td><td>❌ 共有基础丧失或重大理由时方可</td></tr>
+<tr><td>推定规则</td><td>无约定+无家庭关系→推定为按份共有</td><td>有家庭关系→推定为共同共有</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">⏰ 优先购买权行使期限</div>通知载明期间→从通知（≥15日）；未载明→从知悉之日起<strong>15日</strong>；无法确定知悉时间→权属转移之日起<strong>6个月</strong></div>
+</div>
+
+<!-- 知识点6: 担保物权 -->
+<div class="card amber" id="s6">
+<h3><span class="icon">🔐</span> 6. 担保物权三大类型对比 <span class="stars">★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>对比项</th><th>抵押权</th><th>质权</th><th>留置权</th></tr></thead>
+<tbody>
+<tr><td><strong>标的物</strong></td><td>不动产 / 动产</td><td>动产 / 权利</td><td>动产</td></tr>
+<tr><td><strong>是否转移占有</strong></td><td>❌ 不转移</td><td>✅ 转移</td><td>已合法占有</td></tr>
+<tr><td><strong>设立方式</strong></td><td>约定</td><td>约定</td><td>⚡ 法定（无需约定）</td></tr>
+<tr><td><strong>不动产设立</strong></td><td>登记生效</td><td>—</td><td>—</td></tr>
+<tr><td><strong>动产设立</strong></td><td>登记对抗</td><td>交付生效</td><td>法定条件满足时设立</td></tr>
+<tr><td><strong>实现方式</strong></td><td>折价/拍卖/变卖</td><td>同抵押权</td><td>同抵押权（须通知债务人）</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">📌 口诀</div><strong>不动产抵、动产质、法定留置</strong>——抵押权看登记、质权看交付、留置权看法定条件</div>
+</div>
+
+<!-- 知识点7 -->
+<div class="card amber" id="s7">
+<h3><span class="icon">🏢</span> 7. 建筑物区分所有权 <span class="stars">★★★★</span></h3>
+<div class="highlight"><div class="hl-title">三部分构成</div>① <strong>专有权</strong>（对专有部分独占）② <strong>共有权</strong>（对共有部分按份共有）③ <strong>共同管理权/成员权</strong></div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>业主大会议题</th><th>参与表决门槛</th><th>通过门槛</th></tr></thead>
+<tbody>
+<tr><td>一般事项（制定规约、选聘物业等）</td><td>面积+人数 ≥ 2/3</td><td>参与表决的过半数</td></tr>
+<tr><td><strong>重大事项</strong>（筹集维修资金、改建重建、改变共有部分用途等）</td><td>面积+人数 ≥ 2/3</td><td>参与表决的 <strong>≥ 3/4</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div class="q-card">
+<div class="q-title">📝 例题5：住宅楼共有部分权利判断</div>
+<div class="q-body">甲、乙、丙、丁分别购买某住宅楼一至四层。判断下列说法的正误：</div>
+<div class="q-opts"><span>① 四人可分享外墙广告收入 ② 一层住户甲对三四层楼板不享有共有权</span><span>③ 甲出卖其住宅，乙丙丁有优先购买权 ④ 丁经乙丙同意可在楼顶建花圃</span><span>⑤ 乙可分享外墙共有收益 ⑥ 丙可拒绝承担外墙维修费用</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ ①②④⑤正确</span><br>
+①外墙广告收入属共有收益→全体共享 ✓<br>②楼板属该层层主专有部分 ✓<br>③<strong>业主出卖住宅，其他业主无优先购买权</strong> ✗<br>④经其他共有人同意可使用共有部分 ✓<br>⑤共有权使乙可分享收益 ✓<br>⑥<strong>收益权和维修义务不可分割</strong> ✗
+</div>
+</div>
+</div>
+
+<!-- 知识点8 -->
+<div class="card amber" id="s8">
+<h3><span class="icon">🏘️</span> 8. 相邻关系 <span class="stars">★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>法条</th><th>核心</th></tr></thead>
+<tbody>
+<tr><td>用水、排水</td><td>第290条</td><td>尊重自然流向；人工排水需保护措施</td></tr>
+<tr><td>通行</td><td>第291条</td><td>提供必要便利；选<strong>损失最小</strong>路线</td></tr>
+<tr><td>施工、管线铺设</td><td>第292条</td><td>提供便利+赔偿损失</td></tr>
+<tr><td>通风、采光、日照</td><td>第293条</td><td>不得妨碍相邻方</td></tr>
+<tr><td>环境保护</td><td>第294条</td><td>不得排放污染/噪声/光污染</td></tr>
+<tr><td>安全（防险）</td><td>第295条</td><td>挖掘/建造不得危及相邻不动产</td></tr>
+</tbody>
+</table>
+</div>
+<div class="q-card">
+<div class="q-title">📝 例题6：修房堆放建材案</div>
+<div class="q-body">甲、乙、丙比邻而居。甲修房想在乙院内堆放建材，乙不同意。甲转向丙，丙要求付费200元+不超过20天，甲同意。修房时甲搬运建材须从乙门前经过，乙阻拦。</div>
+<div class="q-opts"><span>问：下列哪一说法<strong>不正确</strong>？A.乙无权拒绝甲在其院内堆放建材 B.乙无权阻拦甲经其门前搬运建材 C.甲应依约向丙付占地费 D.超20天丙有权要求清理</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ A（不正确）</span><br>
+<strong>解析：</strong>A ✗ 堆放建材不属"必须利用相邻不动产"的情形，乙<strong>有权拒绝</strong>；B ✓ 通行属必要的相邻关系便利；C ✓ D ✓ 均为正确。
+</div>
+</div>
+</div>
+
+<!-- 知识点9 -->
+<div class="card green" id="s9">
+<h3><span class="icon">📦</span> 9. 所有权取得方式 <span class="stars">★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>原始取得</th><th>继受取得</th></tr></thead>
+<tbody>
+<tr><td>劳动生产、孳息、<strong>善意取得</strong>、添附（混合/附合/加工）、拾得遗失物、先占、征收</td><td>买卖、赠与、继承</td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">🌿 孳息归属（第321条）</div><strong>天然孳息</strong>→归所有权人（有用益物权人的归用益物权人）｜<strong>法定孳息</strong>→有约定从约定，无约定按交易习惯</div>
+</div>
+
+<!-- ==================== 总则编 ==================== -->
+
+<div class="sec-title"><span class="num amber">则</span> 总则编（预计40分）</div>
+
+<!-- 知识点10 -->
+<div class="card red" id="s10">
+<h3><span class="icon">📋</span> 10. 民法七大基本原则 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>#</th><th>原则</th><th>法条</th><th>口诀</th></tr></thead>
+<tbody>
+<tr><td>①</td><td>民事权益受法律保护原则</td><td>第3条</td><td><strong>权</strong></td></tr>
+<tr><td>②</td><td>平等原则</td><td>第4条</td><td><strong>平</strong></td></tr>
+<tr><td>③</td><td>自愿原则（意思自治）</td><td>第5条</td><td><strong>自</strong></td></tr>
+<tr><td>④</td><td>公平原则</td><td>第6条</td><td><strong>公</strong></td></tr>
+<tr><td>⑤</td><td>诚实信用原则（帝王条款）</td><td>第7条</td><td><strong>诚</strong></td></tr>
+<tr><td>⑥</td><td>合法与公序良俗原则</td><td>第8条</td><td><strong>守</strong></td></tr>
+<tr><td>⑦</td><td>绿色原则</td><td>第9条</td><td><strong>绿</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div class="highlight"><div class="hl-title">📌 记忆口诀</div><strong>权平自愿公，诚信守绿法</strong></div>
+
+<div class="q-card">
+<div class="q-title">📝 例题7：违反平等原则的判断</div>
+<div class="q-body">下列哪一事项违反平等原则？</div>
+<div class="q-opts"><span>A.甲(25岁)可结婚，乙(13岁)不可 &nbsp; B.证券公司可从事证券业务，房地产公司不可</span><span>C.税务机关征税使用强制手段 &nbsp; D.某市合同管理干部招标中偏袒领导亲戚</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ D</span><br>
+A、B是法律对主体行为能力的合理区分；C是行政关系非民事关系；D在<strong>民事活动</strong>中给予特权→违反平等原则。
+</div>
+</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题8：违反自愿原则的判断</div>
+<div class="q-body">下列哪一项违反自愿原则？</div>
+<div class="q-opts"><span>A. 赵某询问衣服价格后被摊主强卖 &nbsp; B. 钱某与孙某达成质押合同后孙某拒承担法律后果</span><span>C. 李某被要求在接受格式合同后才能装电话 &nbsp; D. 周某花10元从小学生吴某手中购盗版书</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ A</span><br>
+A是<strong>强迫交易</strong>→直接违反自愿原则；B是违约问题；C格式合同本身不一定违反自愿；D涉及行为能力而非自愿。
+</div>
+</div>
+</div>
+
+<!-- 知识点11 -->
+<div class="card red" id="s11">
+<h3><span class="icon">🔗</span> 11. 民事法律关系 <span class="stars">★★★★★</span></h3>
+<div class="highlight"><div class="hl-title">三要素</div><strong>主体</strong>（自然人/法人/非法人组织/国家）→ <strong>客体</strong>（物/行为/智力成果/人身利益/权利）→ <strong>内容</strong>（民事权利+民事义务）</div>
+<div class="highlight"><div class="hl-title">⚠️ 不属于民法调整</div>情谊行为（请客吃饭、帮忙找东西、恋爱关系）——但<strong>重大过失造成损害除外</strong>｜行政关系、税收关系</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题9：民法调整对象判断</div>
+<div class="q-body">下列哪些关系属于民法调整？</div>
+<div class="q-opts"><span>①税务机关退还多缴的个人所得税 ②甲发布寻物启事"拾得归还者当面感谢并付酬金" ③乙与男明星恋爱后结婚 ④丙作为青年志愿者定期去福利院帮工</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ ②</span><br>
+①税务关系→行政法调整；②<strong>悬赏广告</strong>→合同关系→民法调整；③属情感行为；④志愿者服务非民事法律关系。核心判断标准：是否为<strong>平等主体</strong>之间的<strong>人身关系</strong>或<strong>财产关系</strong>。
+</div>
+</div>
+</div>
+
+<!-- 知识点12 -->
+<div class="card red" id="s12">
+<h3><span class="icon">🧑</span> 12. 民事行为能力 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>条件</th><th>行为效力</th></tr></thead>
+<tbody>
+<tr><td><strong>完全行为能力</strong></td><td>①18岁以上 ②<strong>16岁+以自己劳动收入为主要生活来源</strong>（视为完全）</td><td>可独立实施民事法律行为</td></tr>
+<tr><td><strong>限制行为能力</strong></td><td>①8岁以上未成年人 ②不能完全辨认自己行为的成年人</td><td>纯获益或相适应行为→有效；其他→须法定代理人同意/追认</td></tr>
+<tr><td><strong>无行为能力</strong></td><td>①不满8岁 ②完全不能辨认自己行为的成年人</td><td>一律由法定代理人代理</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题10：肖特16岁音乐天才案</div>
+<div class="q-body">肖特有音乐天赋，16岁便不再上学，以演出收入为主要生活来源。其成长过程中：7岁受赠口琴1个，9岁受赠钢琴1架，15岁受赠名贵小提琴1把。判断：</div>
+<div class="q-opts"><span>A.肖特尚不具备完全民事行为能力</span><span>B.受赠口琴的行为无效</span><span>C.受赠钢琴有效，因与当时年龄智力相适应</span><span>D.受赠小提琴无效</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ C</span><br>
+肖特16岁以自己劳动收入为主要生活来源→<strong>视为完全行为能力人</strong>，A错误。但按行为<strong>发生时</strong>年龄判断：7岁（无行为能力）→受赠口琴无效（B错误）；9岁（限制行为能力）→受赠钢琴属<strong>纯获益</strong>→有效（C正确）；15岁（限制行为能力）→受赠小提琴属纯获益→<strong>有效</strong>（D错误）。
+</div>
+</div>
+</div>
+
+<!-- 知识点13 -->
+<div class="card amber" id="s13">
+<h3><span class="icon">🤲</span> 13. 监护制度 <span class="stars">★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td><strong>法定监护</strong></td><td>未成年人：父母→祖父母外祖父母→兄姐→其他；成年人：配偶→父母子女→其他近亲属</td></tr>
+<tr><td><strong>遗嘱监护</strong></td><td>父母可通过遗嘱为未成年人子女指定监护人（第29条）</td></tr>
+<tr><td><strong>协议监护</strong></td><td>有监护资格的人之间可协议确定（第30条）</td></tr>
+<tr><td><strong>意定监护</strong></td><td>完全民事行为能力人可<strong>书面</strong>确定将来的监护人（第33条）</td></tr>
+<tr><td><strong>指定监护</strong></td><td>有争议时由居/村委会或民政部门指定，不服可向法院申请（第31条）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题11：离婚后子女监护</div>
+<div class="q-body">陆某因诈骗被判入狱，与配偶协议离婚，约定12岁孩子随陆某生活。调查发现孩子实际一直随陆某父母生活。</div>
+<div class="q-opts"><span>A.陆某是唯一监护人 B.陆某配偶是唯一监护人 C.夫妻二人均为监护人 D.陆某父母为监护人</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ C</span><br>
+<strong>离婚不影响父母双方的监护人资格！</strong>虽然孩子随一方生活，但双方均为法定监护人。
+</div>
+</div>
+</div>
+
+<!-- 知识点14 -->
+<div class="card amber" id="s14">
+<h3><span class="icon">📢</span> 14. 宣告失踪 vs 宣告死亡 <span class="stars">★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>对比项</th><th>宣告失踪</th><th>宣告死亡</th></tr></thead>
+<tbody>
+<tr><td><strong>条件</strong></td><td>下落不明满 <strong>2年</strong></td><td>一般：<strong>4年</strong>；意外事故：<strong>2年</strong>（有证明不可能生存则无限制）</td></tr>
+<tr><td><strong>法律效果</strong></td><td>设定财产代管人</td><td><strong>婚姻关系消灭</strong>、<strong>继承开始</strong>、子女可被收养</td></tr>
+<tr><td><strong>撤销后</strong></td><td>代管人移交财产</td><td>婚姻关系恢复（再婚除外）；财产返还</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- 知识点15 -->
+<div class="card amber" id="s15">
+<h3><span class="icon">🏛️</span> 15. 法人分类 <span class="stars">★★★★</span></h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>举例</th></tr></thead>
+<tbody>
+<tr><td><strong>营利法人</strong></td><td>有限责任公司、股份有限公司、其他企业法人</td></tr>
+<tr><td><strong>非营利法人</strong></td><td>事业单位法人、社会团体法人、捐助法人（基金会、宗教场所）</td></tr>
+<tr><td><strong>特别法人</strong></td><td>机关法人、农村集体经济组织法人、城镇农村合作经济组织法人、基层群众性自治组织法人（居委会/村委会）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题12：法定代表人越权签约案</div>
+<div class="q-body">甲、乙、丙成立德利实业有限责任公司，甲为董事长（法定代表人）。章程规定动用超10万元资金须经董事会同意。甲未经乙丙协商即<strong>以公司名义</strong>与丁公司签订20万元采购合同。</div>
+<div class="q-opts"><span>问：该采购合同效力如何？为什么？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ 合同有效</span><br>
+法人章程或权力机构对法定代表人代表权的限制<strong>不得对抗善意相对人</strong>（丁公司不知道也不应当知道该限制）。法人对法定代表人执行职务造成的后果承担责任。
+</div>
+</div>
+</div>
+
+<!-- 知识点16 + 诉讼时效 -->
+<div class="card green" id="s16">
+<h3><span class="icon">⚡</span> 16. 诉讼时效 + 民事权利分类 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">⏰ 一般诉讼时效：<strong>3年</strong></div>自权利人知道或应当知道权利受损及义务人之日起算。法院<strong>不得主动适用</strong>诉讼时效规定。</div>
+
+<div class="q-card">
+<div class="q-title">📝 例题13：诉讼时效——法务小张签承诺书案</div>
+<div class="q-body">乙公司承建甲公司办公楼，验收合格后甲公司一直未付工程款，乙也未催要。<strong>诉讼时效届满后</strong>，乙公司组织人员到甲公司讨要，甲公司新录用法务小张以公司名义签署了"同意付款"和"承诺分期付款"的承诺书。</div>
+<div class="q-opts"><span>A.甲公司可以主张诉讼时效抗辩 B.因乙公司提起诉讼，诉讼时效中断 C.法院不应主动适用诉讼时效 D.甲公司同意履行后不能再主张时效抗辩</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content">
+<span class="correct">✅ D</span><br>
+<strong>诉讼时效届满后，义务人同意履行的，不得再以诉讼时效届满为由抗辩。</strong>新录用员工以公司名义签承诺书→表见代理→公司承受后果。法院不主动适用诉讼时效（C本身正确但非最佳选项）。
+</div>
+</div>
+</div>
+
+<!-- ==================== 附录 ==================== -->
+
+<div class="sec-title"><span class="num green">附</span> 附录</div>
+
+<div class="card green" id="f1">
+<h3><span class="icon">📜</span> 必背法条号</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>法条</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>第3-9条</td><td>七大基本原则（权平自愿公，诚信守绿法）</td></tr>
+<tr><td>第13条</td><td>自然人权利能力：始于出生，终于死亡</td></tr>
+<tr><td>第17-20条</td><td>民事行为能力三分（18岁/8岁分界，16岁+劳动收入视为完全）</td></tr>
+<tr><td>第209条</td><td>不动产物权登记生效</td></tr>
+<tr><td>第215条</td><td>物权区分原则（未登记不影响合同效力）</td></tr>
+<tr><td>第224条</td><td>动产物权交付生效</td></tr>
+<tr><td>第225条</td><td>特殊动产登记对抗</td></tr>
+<tr><td>第278条</td><td>业主共同决定事项及表决规则</td></tr>
+<tr><td>第303条</td><td>共有物分割请求权</td></tr>
+<tr><td><strong>第311条</strong></td><td><strong>善意取得制度</strong></td></tr>
+<tr><td>第321条</td><td>孳息归属</td></tr>
+<tr><td>第322条</td><td>添附规则</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="card green" id="f2">
+<h3><span class="icon">🧠</span> 记忆口诀汇总</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>口诀</th><th>对应内容</th></tr></thead>
+<tbody>
+<tr><td><strong>权平自愿公，诚信守绿法</strong></td><td>七大民法基本原则</td></tr>
+<tr><td><strong>支配+对世+排他+法定</strong></td><td>物权四大特征</td></tr>
+<tr><td><strong>不动产抵、动产质、法定留置</strong></td><td>三大担保物权区分</td></tr>
+<tr><td><strong>物权变动看公示，不动产登记动产交</strong></td><td>物权变动模式总口诀</td></tr>
+<tr><td><strong>无权+善意+有价+公示+有效</strong></td><td>善意取得五要件</td></tr>
+<tr><td><strong>按份2/3，共同全同意</strong></td><td>共有物处分表决比例</td></tr>
+<tr><td><strong>完限无，18/8分</strong></td><td>民事行为能力三分</td></tr>
+<tr><td><strong>3年时效不主动，同意履行不反悔</strong></td><td>诉讼时效</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+
+<!-- Back to Top -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">↑</button>
+
+<script>
+// Answer toggle
+function toggleAns(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.classList.contains('show');
+  content.classList.toggle('show');
+  btn.classList.toggle('shown');
+  btn.textContent = isOpen ? '点击查看答案' : '▲ 收起答案';
+}
+
+// Progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  document.getElementById('progress').style.width = progress + '%';
+
+  // Back to top button
+  const btt = document.getElementById('btt');
+  btt.classList.toggle('visible', scrollTop > 600);
+});
+
+// Nav active state
+const sections = document.querySelectorAll('.card[id]');
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) current = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+});
+
+// Mobile nav: close on link click
+navLinks.forEach(a => a.addEventListener('click', () => {
+  document.querySelector('nav').classList.remove('open');
+}));
+</script>
+</body>
+</html>
