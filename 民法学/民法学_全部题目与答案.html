@@ -3,50 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>民法学 · 76道真题答案与解析</title>
+<title>民法学 · 83道真题答案与解析</title>
 <style>
-:root{--bg:#faf7f2;--card:#fff;--text:#2c2416;--muted:#8a7a60;--accent:#8b4513;--gold:#c9a040;--border:#e8ddcc;--side-bg:#1e1a14;--green:#2e7d32;--sw:250px;--red:#c0392b}
+:root{--bg:#f5f0e8;--card:#fffef9;--text:#2c2416;--muted:#8a7a60;--accent:#8b4513;--gold:#b8860b;--border:#e0d5c0;--side-bg:#1a1610;--green:#2e7d32;--sw:270px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Noto Serif SC","Source Han Serif SC","SimSun",serif;background:var(--bg);color:var(--text);line-height:1.75;display:flex}
-/* Expand/collapse */
+body{font-family:"Noto Serif SC","Source Han Serif SC","SimSun",serif;background:var(--bg);color:var(--text);line-height:1.8;display:flex}
+
+/* ===== SIDEBAR ===== */
+#sidebar{position:fixed;top:0;left:0;width:var(--sw);height:100vh;background:var(--side-bg);color:#c4b58a;overflow-y:auto;z-index:100;padding:20px 12px;font-size:12px;scrollbar-width:thin;scrollbar-color:#4a3d28 transparent}
+#sidebar h3{font-size:16px;color:#e8d090;margin-bottom:8px;border-bottom:2px solid #4a3d28;padding-bottom:10px;letter-spacing:2px}
+#sidebar a{display:block;color:#b8a572;text-decoration:none;padding:4px 10px;border-radius:4px;font-size:12px;transition:.15s;margin:1px 0;line-height:1.4}
+#sidebar a:hover{background:#352a18;color:#f0e0b0}
+#sidebar a.sb-top{font-size:13px;font-weight:bold;margin-bottom:8px;color:#e0cc90}
+#sidebar a.sb-top:hover{color:#fff}
+
+/* sidebar section headers */
+#sidebar .sb-sec{margin-top:12px;margin-bottom:3px}
+#sidebar .sb-sec-link{font-size:12.5px!important;color:#e0cc90!important;font-weight:bold;padding:5px 10px!important;border-bottom:1px solid #3a2d18}
+#sidebar .sb-sec-link:hover{color:#fff!important;background:#3a2d18}
+
+/* sidebar question entries */
+#sidebar a.sb-q{padding:3px 8px 3px 18px;font-size:11.5px;color:#a09070;border-left:2px solid transparent;margin:0;line-height:1.3}
+#sidebar a.sb-q:hover{background:#2a1f10;color:#d4c090}
+#sidebar a.sb-q.active{border-left:3px solid var(--gold);color:#f0e0b0;background:#2a1f10;font-weight:bold}
+#sidebar .sb-qnum{color:var(--gold);font-size:10px;margin-right:3px;font-weight:bold}
+
+/* ===== MAIN CONTENT ===== */
+#main{margin-left:var(--sw);padding:30px 40px;max-width:920px;width:100%}
+h1{font-size:26px;color:var(--accent);border-bottom:3px solid var(--gold);padding-bottom:10px;margin-bottom:6px;letter-spacing:1px}
+h2{font-size:19px;color:#5a3520;margin:32px 0 12px;padding:8px 14px;border-left:5px solid var(--gold);background:linear-gradient(90deg,#fdf8ef,transparent);font-weight:bold}
+.meta{font-size:14px;color:var(--muted);margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px}
+.meta span{background:#f0e8d8;padding:4px 14px;border-radius:12px;font-size:13px}
+
+/* ===== QUESTION CARDS ===== */
+.q-card{background:var(--card);border:1px solid var(--border);border-bottom:none;border-radius:10px 10px 0 0;padding:18px 22px;margin:20px 0 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.q-head{font-size:11px;color:var(--muted);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.q-num{display:inline-block;background:var(--accent);color:#fff;font-size:12px;padding:2px 10px;border-radius:10px;font-weight:bold}
+.q-body{font-size:15px;line-height:1.9;white-space:pre-line}
+
+/* ===== ANSWER CARDS ===== */
+.a-card{background:#fafdf6;border:1px solid #d0e0c0;border-top:2px solid var(--green);border-radius:0 0 10px 10px;padding:18px 22px;margin:0 0 28px;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+
+/* Toggle: answer hidden by default */
 .a-card .a-analysis,.a-card .a-answer,.a-card .a-kp{display:none}
 .a-card.open .a-analysis,.a-card.open .a-answer,.a-card.open .a-kp{display:block}
-.a-toggle{cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px}
-.a-toggle::after{content:'▶ 点击展开答案';font-size:11px;color:var(--green);transition:.2s}
-.a-card.open .a-toggle::after{content:'▼ 收起答案'}
-.a-card .a-label{pointer-events:none}
-#sidebar{position:fixed;top:0;left:0;width:var(--sw);height:100vh;background:var(--side-bg);color:#c4b58a;overflow-y:auto;z-index:100;padding:22px 14px;font-size:11.5px}
-#sidebar h3{font-size:14px;color:#e0cc90;margin-bottom:10px;border-bottom:1px solid #4a3d28;padding-bottom:8px}
-#sidebar a{display:block;color:#b8a572;text-decoration:none;padding:3px 8px;border-radius:3px;font-size:11px;transition:.15s;margin:1px 0}
-#sidebar a:hover{background:#352a18;color:#e8d090}
-#main{margin-left:var(--sw);padding:24px 32px;max-width:900px;width:100%}
-h1{font-size:22px;color:var(--accent);border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:4px}
-.meta{font-size:13px;color:var(--muted);margin-bottom:20px}
-h2{font-size:17px;color:var(--accent);margin:28px 0 10px;padding:6px 12px;border-left:4px solid var(--gold);background:linear-gradient(90deg,#fdf8ef,transparent)}
-.q-card{background:var(--card);border:1px solid var(--border);border-radius:8px 8px 0 0;padding:14px 18px;margin:12px 0 0}
-.q-head{font-size:11px;color:var(--muted);margin-bottom:6px}
-.q-num{display:inline-block;background:var(--accent);color:#fff;font-size:11px;padding:1px 8px;border-radius:8px;margin-right:6px}
-.q-body{font-size:14px;line-height:1.85;white-space:pre-line}
-.a-card{background:#f8fdf5;border:1px solid #c8e6c9;border-top:none;border-radius:0 0 8px 8px;padding:14px 18px;margin:0 0 18px}
-.a-label{font-size:12px;font-weight:bold;color:var(--green);margin-bottom:4px;letter-spacing:1px}
-.a-label-sm{font-size:11px;font-weight:bold;color:var(--accent);margin:8px 0 4px;letter-spacing:1px}
-.a-answer{font-size:15px;font-weight:bold;color:#1b5e20;margin-bottom:4px}
-.a-analysis{font-size:13.5px;color:#555;line-height:1.8}
-.a-kp{margin-top:8px;font-size:12px;color:var(--accent)}
-.kp-link{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--gold);transition:.15s}
+.a-toggle{cursor:pointer;user-select:none;display:flex;align-items:center;gap:10px;padding:4px 0}
+.a-toggle::after{content:'▸ 点击展开答案与解析';font-size:13px;color:var(--green);font-weight:bold;transition:.2s}
+.a-card.open .a-toggle::after{content:'▾ 收起答案与解析'}
+.a-card .a-label{pointer-events:none;font-size:14px;font-weight:bold;color:var(--green);letter-spacing:1px}
+
+.a-label-sm{font-size:12px;font-weight:bold;color:var(--accent);margin:10px 0 6px;letter-spacing:1px;border-bottom:1px dotted var(--gold);padding-bottom:3px}
+.a-answer{font-size:16px;font-weight:bold;color:#1b5e20;margin:6px 0 12px;padding:8px 12px;background:#e8f5e9;border-radius:6px}
+.a-analysis{font-size:14px;color:#444;line-height:1.9}
+.a-kp{margin-top:12px;font-size:13px;padding:8px 12px;background:#fdf8ee;border-radius:6px;color:var(--accent)}
+.kp-link{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--gold);transition:.15s;font-weight:bold}
 .kp-link:hover{color:var(--green);border-bottom-color:var(--green)}
 strong{color:#2c2416}
+
+/* tables inside analysis */
+.a-analysis table{width:100%;font-size:13px;margin:8px 0;border-collapse:collapse}
+.a-analysis td,.a-analysis th{padding:6px 10px;border:1px solid #ddd}
+.a-analysis tr:first-child{background:#f0e8d8}
+
+/* pre blocks */
+.a-analysis pre{font-size:12px;background:#faf7f2;padding:10px;border-radius:4px;line-height:1.7;border:1px solid var(--border);overflow-x:auto}
+
 @media(max-width:860px){#sidebar{display:none}#main{margin-left:0;padding:16px}}
-
-#sidebar a.sb-q{padding:2px 8px 2px 18px;font-size:10px;color:#9a8a60;border-left:2px solid transparent;margin:0}
-#sidebar a.sb-q:hover{background:#352a18;color:#d4b890}
-#sidebar a.sb-q.active{border-left:2px solid var(--gold);color:#e0cc90;background:#2a2010}
-#sidebar .sb-sec{margin-top:8px;margin-bottom:2px}
-#sidebar .sb-sec-link{font-size:11px;color:#c4a860!important;font-weight:bold;padding:4px 8px!important}
-#sidebar .sb-sec-link:hover{color:#e8d090!important}
-#sidebar .sb-qnum{color:var(--gold);font-size:9px;margin-right:2px}
-#sidebar a.sb-top{margin-bottom:6px;font-weight:bold}
-
 </style>
 </head>
 <body>
