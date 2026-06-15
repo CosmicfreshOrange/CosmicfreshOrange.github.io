@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民法学·考前冲刺复习手册（章节重排版）</title>
+<style>
+:root{--bg:#fdfaf5;--card:#fffef9;--text:#2c2416;--text2:#5c4f3a;--accent:#8b1a1a;--gold:#c4943a;--warm:#d4722a;--green:#2d6a4f;--border:#e5d9c4;--red-bg:#fef5f4;--red-border:#f3c8c4;--amber-bg:#fffcf0;--amber-border:#eed9a8;--green-bg:#f4faf6;--green-border:#b8d9c5;--shadow:0 1px 3px rgba(44,36,22,.06);--shadow-md:0 4px 12px rgba(44,36,22,.08);--radius:10px;--radius-sm:6px;--nav-w:260px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:17px}
+body{font-family:'Georgia','Noto Serif SC','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.72;-webkit-font-smoothing:antialiased;background-image:radial-gradient(ellipse at 20% 5%,rgba(196,148,58,.04) 0%,transparent 60%),radial-gradient(ellipse at 80% 95%,rgba(139,26,26,.03) 0%,transparent 60%)}
+nav{position:fixed;top:0;left:0;width:var(--nav-w);height:100vh;background:linear-gradient(175deg,#3d2e1a 0%,#2c1f0e 100%);color:#e5d5b8;overflow-y:auto;z-index:100;padding:28px 20px 40px;border-right:1px solid rgba(196,148,58,.2);transition:transform .3s}
+nav h2{font-family:'Georgia','Noto Serif SC',serif;font-size:1.2rem;font-weight:700;color:#f0e2c8;text-align:center;margin-bottom:6px;letter-spacing:.06em}
+nav .sub{text-align:center;font-size:.75rem;color:#b8956a;margin-bottom:18px}
+nav .cat{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#9b7d55;margin:16px 0 4px 12px;font-weight:700}
+nav a{display:block;color:#c8b58a;text-decoration:none;padding:6px 10px;border-radius:var(--radius-sm);font-size:.8rem;transition:all .2s;border-left:2px solid transparent;margin-bottom:1px}
+nav a:hover,nav a.active{color:#f5e6c8;background:rgba(255,255,255,.06);border-left-color:var(--gold)}
+nav .badge{display:inline-block;font-size:.6rem;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle}
+.badge-red{background:rgba(220,80,60,.25);color:#f0a090}
+.badge-amber{background:rgba(200,160,60,.25);color:#e8cd80}
+.badge-green{background:rgba(80,160,100,.25);color:#a0d8b0}
+main{margin-left:var(--nav-w);max-width:980px;padding:36px 40px 80px}
+header.hero{text-align:center;padding:48px 20px 36px;border-bottom:2px solid var(--border);margin-bottom:36px;position:relative}
+header.hero::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:80px;height:2px;background:var(--accent)}
+header.hero h1{font-family:'Georgia','Noto Serif SC',serif;font-size:2.3rem;font-weight:900;color:#3d2e1a;letter-spacing:.04em;margin-bottom:4px}
+header.hero .exam-date{display:inline-block;background:var(--accent);color:#fff;padding:6px 18px;border-radius:20px;font-size:.85rem;font-weight:600;margin-top:6px}
+.dept-title{font-family:'Georgia','Noto Serif SC',serif;font-size:1.8rem;font-weight:900;color:#3d2e1a;margin:52px 0 18px;padding:12px 20px;background:linear-gradient(135deg,rgba(61,46,26,.06),rgba(196,148,58,.08));border-left:5px solid var(--accent);border-radius:4px}
+.sec-title{font-family:'Georgia','Noto Serif SC',serif;font-size:1.5rem;font-weight:800;margin:40px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--border);color:#3d2e1a;display:flex;align-items:center;gap:10px}
+.sec-title .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-size:.9rem;font-weight:700;color:#fff;flex-shrink:0}
+.num.red{background:var(--accent)}.num.amber{background:var(--warm)}.num.green{background:var(--green)}
+.card{background:var(--card);border-radius:var(--radius);padding:22px 26px;margin-bottom:16px;box-shadow:var(--shadow);border:1px solid var(--border);transition:box-shadow .2s}
+.card:hover{box-shadow:var(--shadow-md)}
+.card h3{font-family:'Georgia','Noto Serif SC',serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card .stars{color:var(--gold);font-size:.7rem;margin-left:auto;white-space:nowrap}
+.card.red{border-left:4px solid var(--accent);background:var(--red-bg);border-color:var(--red-border)}
+.card.amber{border-left:4px solid var(--warm);background:var(--amber-bg);border-color:var(--amber-border)}
+.card.green{border-left:4px solid var(--green);background:var(--green-bg);border-color:var(--green-border)}
+.table-wrap{overflow-x:auto;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:.84rem;border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow)}
+thead{background:#3d2e1a;color:#f0e2c8}
+th{padding:9px 12px;text-align:left;font-weight:600;font-size:.78rem;letter-spacing:.04em}
+td{padding:8px 12px;border-bottom:1px solid var(--border)}
+tbody tr:nth-child(even){background:rgba(196,148,58,.04)}
+tbody tr:hover{background:rgba(196,148,58,.08)}
+.highlight{background:linear-gradient(135deg,#fff8ed,#fff3e0);border:1px solid #edd5a0;border-radius:var(--radius-sm);padding:12px 16px;margin:8px 0;font-size:.84rem}
+.highlight strong{color:var(--accent)}
+.highlight .hl-title{font-weight:700;color:#8b6914;margin-bottom:3px}
+.q-card{background:#fffef9;border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:10px 0;box-shadow:var(--shadow);position:relative}
+.q-card::before{content:'📝';position:absolute;top:-12px;left:14px;font-size:1.3rem;background:var(--bg);padding:0 4px}
+.q-card .q-title{font-weight:700;color:#3d2e1a;margin-bottom:6px;padding-top:4px}
+.q-card .q-body{font-size:.86rem;color:var(--text2);margin-bottom:6px}
+.q-card .q-opts{margin:4px 0;padding-left:4px}
+.q-card .q-opts span{display:block;padding:1px 0;font-size:.84rem}
+.ans-toggle{display:inline-block;background:var(--accent);color:#fff;border:none;padding:6px 18px;border-radius:18px;font-size:.8rem;cursor:pointer;font-weight:600;transition:all .2s;margin-top:4px}
+.ans-toggle:hover{background:#a01e1e;transform:translateY(-1px)}
+.ans-toggle.shown{background:var(--green)}
+.ans-content{display:none;margin-top:10px;padding:14px 16px;background:#f8f5ed;border-radius:var(--radius-sm);border-left:3px solid var(--green);font-size:.84rem;line-height:1.65}
+.ans-content.show{display:block}
+.ans-content .correct{color:var(--green);font-weight:700}
+.memo{background:linear-gradient(135deg,#fdf6f0,#fef9f4);border:2px dashed #d4b896;border-radius:var(--radius-sm);padding:10px 16px;margin:8px 0;font-size:.83rem}
+.memo strong{color:#8b6914}
+#btt{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.2rem;cursor:pointer;box-shadow:0 3px 10px rgba(139,26,26,.3);opacity:0;transform:translateY(20px);transition:all .3s;z-index:200}
+#btt.visible{opacity:1;transform:translateY(0)}
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:300;transition:width .15s linear}
+@media print{nav,#btt,#progress,#menu-btn{display:none!important}main{margin-left:0;padding:16px}.card,.q-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}.ans-content{display:block!important}.ans-toggle{display:none}body{font-size:11pt}}
+@media(max-width:860px){nav{transform:translateX(-100%);width:100%;max-width:280px}nav.open{transform:translateX(0)}main{margin-left:0;padding:16px 14px 60px}header.hero h1{font-size:1.4rem}.card{padding:14px 16px}.q-card{padding:14px 16px}.q-card::before{top:-10px;left:10px;font-size:1.1rem}}
+@media(min-width:861px){#menu-btn{display:none}}
+#menu-btn{display:none}
+@media(max-width:860px){#menu-btn{display:flex;position:fixed;top:12px;left:12px;z-index:250;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.2rem;cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2)}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<button id="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="菜单">☰</button>
+
+<nav id="nav">
+<h2>民法学</h2><div class="sub">考前冲刺·6月16日·37题全·章节重排</div>
+<div class="cat">📘 第一编 总论</div>
+<a href="#g1-1">1.民法七大原则<span class="badge badge-red">必考</span></a>
+<a href="#g1-2">2.民事法律关系<span class="badge badge-red">必考</span></a>
+<a href="#g1-3">3.民事权利分类<span class="badge badge-green">重点</span></a>
+<a href="#g1-4">4.民法适用/空间效力<span class="badge badge-green">重点</span></a>
+<a href="#g1-5">5.民事行为能力<span class="badge badge-red">必考</span></a>
+<a href="#g1-6">6.监护制度<span class="badge badge-amber">高频</span></a>
+<a href="#g1-7">7.宣告失踪/死亡<span class="badge badge-amber">高频</span></a>
+<a href="#g1-8">8.法人制度<span class="badge badge-amber">高频</span></a>
+<a href="#g1-9">9.合伙制度<span class="badge badge-green">重点</span></a>
+<a href="#g1-10">10.民事法律行为效力<span class="badge badge-amber">高频</span></a>
+<a href="#g1-11">11.代理制度<span class="badge badge-green">重点</span></a>
+<a href="#g1-12">12.诉讼时效<span class="badge badge-green">重点</span></a>
+<div class="cat">📙 第二编 物权</div>
+<a href="#g2-1">13.物权vs债权区别<span class="badge badge-red">必考</span></a>
+<a href="#g2-2">14.物权法三大原则<span class="badge badge-red">必考</span></a>
+<a href="#g2-3">15.物权变动模式<span class="badge badge-red">必考</span></a>
+<a href="#g2-4">16.善意取得制度<span class="badge badge-red">必考</span></a>
+<a href="#g2-5">17.按份vs共同共有<span class="badge badge-red">必考</span></a>
+<a href="#g2-6">18.建筑物区分所有权<span class="badge badge-amber">高频</span></a>
+<a href="#g2-7">19.相邻关系<span class="badge badge-amber">高频</span></a>
+<a href="#g2-8">20.所有权取得方式<span class="badge badge-green">重点</span></a>
+<a href="#g2-9">21.土地承包经营权<span class="badge badge-green">重点</span></a>
+<a href="#g2-10">22.担保物权对比<span class="badge badge-amber">高频</span></a>
+<a href="#g2-11">23.占有<span class="badge badge-green">重点</span></a>
+<div class="cat">📋 附录</div>
+<a href="#f1">必背法条号</a>
+<a href="#f2">记忆口诀汇总</a>
+</nav>
+
+<main>
+<header class="hero">
+<h1>民法学·考前冲刺复习手册</h1>
+<p style="color:var(--text2);margin-top:6px">章节重排版 · 按教科书顺序 · 23知识点 + 37例题 + 14法条号 + 8口诀</p>
+<div class="exam-date">📅 6月16日 19:00 考试</div>
+</header>
+
+<!-- ==================== 第一编 总论 ==================== -->
+<div class="dept-title">📘 第一编 总论</div>
+
+<!-- G1-1: 民法七大原则 (原§6, 🔴) -->
+<div class="card red" id="g1-1">
+<h3>1. 民法七大基本原则 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>#</th><th>原则</th><th>法条</th><th>口诀</th></tr></thead>
+<tbody>
+<tr><td>①</td><td>民事权益受法律保护</td><td>第3条</td><td>权</td></tr>
+<tr><td>②</td><td>平等原则</td><td>第4条</td><td>平</td></tr>
+<tr><td>③</td><td>自愿原则(意思自治)</td><td>第5条</td><td>自</td></tr>
+<tr><td>④</td><td>公平原则</td><td>第6条</td><td>公</td></tr>
+<tr><td>⑤</td><td>诚实信用原则(帝王条款)</td><td>第7条</td><td>诚</td></tr>
+<tr><td>⑥</td><td>合法与公序良俗</td><td>第8条</td><td>守</td></tr>
+<tr><td>⑦</td><td>绿色原则</td><td>第9条</td><td>绿</td></tr>
+</tbody></table></div>
+<div class="memo"><strong>📌 口诀：权平自愿公，诚信守绿法</strong></div>
+
+<div class="q-card"><div class="q-title">📝 例题1：违反平等原则的判断（总则Slide48）</div>
+<div class="q-body">下列哪一事项违反平等原则？</div>
+<div class="q-opts"><span>A.甲(25岁)可结婚，乙(13岁)不可</span><span>B.证券公司可从事证券业务，房地产公司不可</span><span>C.税务机关征税使用强制手段</span><span>D.某市合同管理干部招标中偏袒领导亲戚</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ D</span><br>A、B是法律对不同主体的合理区分；C是行政关系非民事关系；D在<strong>民事活动</strong>中给予特权→违反平等原则。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题2：违反自愿原则的判断（总则Slide49）</div>
+<div class="q-body">下列哪一项违反自愿原则？</div>
+<div class="q-opts"><span>A.赵某询价后被摊主强卖 B.钱某与孙某达成质押合同后孙某拒承担法律后果</span><span>C.李某被要求接受格式合同后才能装电话 D.周某花10元从小学生吴某手中购盗版书</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ A</span><br>A是<strong>强迫交易</strong>→直接违反自愿；B是违约；C格式合同本身不一定违反自愿；D涉及行为能力而非自愿。</div></div>
+</div>
+
+<!-- G1-2: 民事法律关系 (原§8, 🔴) -->
+<div class="card red" id="g1-2">
+<h3>2. 民事法律关系与调整对象 <span class="stars">★★★★★</span></h3>
+<div class="highlight"><div class="hl-title">三要素</div><strong>主体</strong>（自然人/法人/非法人组织/国家）→ <strong>客体</strong>（物/行为/智力成果/人身利益/权利）→ <strong>内容</strong>（民事权利+民事义务）</div>
+<div class="highlight"><div class="hl-title">⚠️ 不属于民法调整</div>情谊行为（请客吃饭、帮忙、恋爱）——<strong>重大过失造成损害的除外</strong>｜行政/税收关系</div>
+
+<div class="q-card"><div class="q-title">📝 例题3：民法调整对象——课后习题（总则Slide27）</div>
+<div class="q-body">下列属于民法调整对象的是（ ）</div>
+<div class="q-opts"><span>A.公司内部行政管理关系 B.国家向纳税人征收税收的关系</span><span>C.公民甲向灾民乙支付赞助费 D.国家机关购买办公用品的关系</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ D</span><br>A属劳动关系/内部管理；B属行政关系；C属情谊行为；D是国家机关以<strong>平等主体</strong>身份参与民事活动。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题4：民法调整对象判断（总则Slide28）</div>
+<div class="q-body">下列社会关系中，属于民法调整对象的是：</div>
+<div class="q-opts"><span>A.甲驾车违章与交管部门形成的处罚关系</span><span>B.甲和乙签订的房屋租赁合同关系</span><span>C.甲向税务机关缴纳税款的关系</span><span>D.甲代替丙去参加大学期末考试形成的关系</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B</span><br>A行政关系；C税收关系(行政)；D不属民事法律关系。B是<strong>平等主体间的财产关系</strong>。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题5：民法调整对象判断（总则Slide29）</div>
+<div class="q-body">根据法律规定，下列哪一种社会关系应由民法调整？</div>
+<div class="q-opts"><span>A.税务机关向纳税人退还多缴的个人所得税</span><span>B.甲手机丢失后发布寻物启事"拾得归还者当面感谢并付酬金"</span><span>C.乙女对男明星爱慕，二人结婚后去欧洲旅游</span><span>D.丙作为青年志愿者定期去福利院帮工</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B</span><br>A税务行政关系；B<strong>悬赏广告→合同关系</strong>→民法调整；C情感行为(婚后关系非题干侧重)；D志愿者服务非民事法律关系。核心：<strong>平等主体间的人身/财产关系</strong>。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题6：聚餐爽约案——情谊行为（总则Slide26）</div>
+<div class="q-body">甲请乙到家中吃饭，乙爽快答应。甲精心准备并炒菜备酒。乙后来忘记约定也未及时告知，使饭菜浪费。乙对甲的责任？</div>
+<div class="q-opts"><span>A.不承担任何责任 B.应承担违约责任 C.应承担侵权责任 D.应承担缔约过失责任</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ A</span><br>请客吃饭属<strong>情谊行为（好意施惠）</strong>，不构成民事法律关系。但<strong>重大过失造成损害</strong>（如酒后驾车送人发生事故）可构成侵权。</div></div>
+</div>
+
+<!-- G1-3: 民事权利分类 (原§20, 🟢) -->
+<div class="card green" id="g1-3">
+<h3>3. 民事权利分类 <span class="stars">★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>分类标准</th><th>类型</th></tr></thead>
+<tbody>
+<tr><td>财产性</td><td>财产权(物权/债权/继承权) vs 非财产权(人格权/身份权)</td></tr>
+<tr><td>效力范围</td><td><strong>绝对权</strong>(物权/知识产权/人格权) vs <strong>相对权</strong>(债权)</td></tr>
+<tr><td>权利作用</td><td><strong>支配权</strong>/<strong>请求权</strong>/<strong>形成权</strong>(撤销权/追认权/解除权)/<strong>抗辩权</strong></td></tr>
+<tr><td>成熟程度</td><td><strong>既得权</strong> vs <strong>期待权</strong></td></tr>
+<tr><td>原权与救济权</td><td>原权(基础性权利) vs 救济权(受侵害后的保护性权利)</td></tr>
+</tbody></table></div>
+</div>
+
+<!-- G1-4: 民法适用/空间效力 (原§21, 🟢) -->
+<div class="card green" id="g1-4">
+<h3>4. 民法适用与空间效力 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">适用原则：</div>上位法>下位法 | 特别法>一般法 | 新法>旧法 | 强行法>任意法 | <strong>法不溯及既往</strong>(有利溯及除外)</div>
+
+<div class="q-card"><div class="q-title">📝 例题7：飞机上打人——空间效力（总则Slide88）</div>
+<div class="q-body">中国公民甲与乙共同乘坐中国国际航空公司的飞机去泰国旅游。在飞机到达泰国时，乙在机舱内因琐事与丙发生争执并将丙打伤。丙回国后起诉要求赔偿。该案应适用？</div>
+<div class="q-opts"><span>A.中国法 B.泰国法 C.中国民法或泰国法 D.国际惯例</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ A（中国法）</span><br>在中国国际航空公司的飞机上→视为<strong>中国领土延伸</strong>→适用中国法。</div></div>
+</div>
+
+<!-- G1-5: 民事行为能力 (原§7, 🔴) -->
+<div class="card red" id="g1-5">
+<h3>5. 民事行为能力 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类型</th><th>条件</th><th>行为效力</th></tr></thead>
+<tbody>
+<tr><td><strong>完全行为能力</strong></td><td>①18岁以上 ②<strong>16岁+以自己劳动收入为主要生活来源</strong>（视为完全）</td><td>可独立实施</td></tr>
+<tr><td><strong>限制行为能力</strong></td><td>①8岁以上未成年人 ②不能完全辨认自己行为的成年人</td><td>纯获益/相适应→有效；其他→须法定代理人同意/追认</td></tr>
+<tr><td><strong>无行为能力</strong></td><td>①不满8岁 ②完全不能辨认自己行为的成年人</td><td>一律由法定代理人代理</td></tr>
+</tbody></table></div>
+
+<div class="q-card"><div class="q-title">📝 例题8：肖特16岁音乐天才案（总则Slide108）</div>
+<div class="q-body">肖特16岁便不再上学，以演出收入为主要生活来源。成长过程中：<strong>7岁</strong>受赠口琴、<strong>9岁</strong>受赠钢琴、<strong>15岁</strong>受赠名贵小提琴。</div>
+<div class="q-opts"><span>A.肖特尚不具备完全民事行为能力</span><span>B.受赠口琴无效</span><span>C.受赠钢琴有效</span><span>D.受赠小提琴无效</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ C</span><br>肖特16岁以劳动收入为主要生活来源→<strong>视为完全行为能力人</strong>（A错误）。但按<strong>行为发生时</strong>年龄判断：7岁(无行为能力)→受赠口琴无效；9岁(限制)→受赠钢琴属<strong>纯获益</strong>→有效；15岁(限制)→受赠小提琴属纯获益→<strong>有效</strong>（D错误）。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题9：行为能力综合判断（总则Slide71）</div>
+<div class="q-body">小张(6岁)、小王(16岁)、小李(66岁)分别做以下行为，判断效力：A.购5000元电视 B.接受别墅奖励 C.继承财产 D.立遗嘱 E.将垃圾扔到邻居家 F.经法定代理人同意后购买学习机 G.邻居失火泼水救火 H.捡到迷途羊羔带回家</div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅</span> 6岁(无行为能力)：A无效(须代理)；B有效(纯获益)；C有效；D无效；E→侵权非法律行为；F经同意有效；G→事实行为；H→事实行为<br>16岁(限制)：A效力待定；B有效；C有效；D无效(须18岁以上)<br>66岁(完全)：全部可独立实施</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题10：6岁儿童购买奢侈品案（总则Slide134）</div>
+<div class="q-body">甲(6岁)系小童星，演出收入颇丰。其父母为增值，以甲的名义购买了一块名品手表，售价850万元。后市场行情走低，损失惨重。</div>
+<div class="q-opts"><span>A.其父母追认后损失适用3年诉讼时效 B.甲父母没有为甲财产增值的义务</span><span>C.买卖合同无效，父母应赔偿损失 D.甲父母的行为构成滥用代理权</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B</span><br>A错误—不适用诉讼时效；B正确—父母有为子女财产增值的权利但非义务；C错误—合同有效；D错误—不构成滥用。</div></div>
+</div>
+
+<!-- G1-6: 监护制度 (原§12, 🟡) -->
+<div class="card amber" id="g1-6">
+<h3>6. 监护制度 <span class="stars">★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类型</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>法定监护</td><td>未成年人：父母→祖父母→兄姐→其他；成年人：配偶→父母子女→其他近亲属</td></tr>
+<tr><td>遗嘱监护</td><td>父母可通过遗嘱指定（第29条）</td></tr>
+<tr><td>协议监护</td><td>有监护资格人之间可协议（第30条）</td></tr>
+<tr><td><strong>意定监护</strong></td><td>完全行为能力人可<strong>书面</strong>确定将来监护人（第33条，<strong>优先于法定监护</strong>）</td></tr>
+<tr><td>指定监护</td><td>有争议时由居/村委会或民政部门指定→不服可向法院申请（第31条）</td></tr>
+</tbody></table></div>
+
+<div class="q-card"><div class="q-title">📝 例题11：60岁张某意定监护案（总则Slide123）</div>
+<div class="q-body">60岁张某丧偶，子女均已成家。张某与比自己小20岁的李某相识，双方达成书面协议："如果张某丧失行为能力，由李某作为监护人履行监护职责，李某承诺承担张某生活起居的一切费用。"</div>
+<div class="q-opts"><span>A.张某子女为监护人故协议无效 B.监护协议有效 C.约定财产继承部分无效 D.张某子女可主张撤销</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B</span><br><strong>意定监护优先于法定监护</strong>（第33条），子女的法定监护资格不影响意定监护协议效力。但继承条件约定可能因违反公序良俗无效。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题12：离婚后子女监护（总则Slide129）</div>
+<div class="q-body">陆某因诈骗被判入狱，与配偶协议离婚，约定12岁孩子随陆某生活。实际孩子一直随陆某父母生活。下列说法正确的是？</div>
+<div class="q-opts"><span>A.陆某是唯一监护人 B.陆某配偶是唯一监护人 C.夫妻二人均为监护人 D.陆某父母为监护人</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ C</span><br><strong>离婚不影响父母双方的监护人资格！</strong>无论孩子随哪方生活，双方均为法定监护人。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题13：2017司考——宣告死亡+监护综合（总则Slide130-131）</div>
+<div class="q-body">甲被法院宣告死亡，其妻乙与丙再婚。后乙因病去世，留下孤童小琼。后甲出现，法院撤销死亡宣告。甲因重病无力照顾自己，小琼无人照顾。哪些选项正确？</div>
+<div class="q-opts"><span>A.甲可通过遗嘱指定其父亲为小琼监护人</span><span>B.甲的前妻乙可通过协议确定前妻为小琼监护人</span><span>C.甲和其配偶可凭意愿书面确定自己将来的监护人</span><span>D.若甲死亡，应由甲的祖父母担任小琼监护人</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ ABC</span><br>A→遗嘱监护(第29条)；B→离婚不影响监护资格，生母仍可协议确定；C→意定监护(第33条)；D错误→监护人确定需依法定顺序，不一定由祖父母。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题14：2010司考——精神病人监护（总则Slide132）</div>
+<div class="q-body">甲十五岁，精神病人。关于监护问题，下列哪一表述是正确的？</div>
+<div class="q-opts"><span>A.监护人只能是甲的近亲属或关系密切的其他亲属朋友</span><span>B.监护人可以是同一顺序中的数人</span><span>C.对担任监护人有争议的可直接请求法院裁决</span><span>D.为甲设定监护人适用关于精神病人监护的规定</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B</span><br>甲是未成年人(15岁)且精神病人→以未成年人规定为先。监护人可由<strong>多人同时担任</strong>（同一顺序中数人）。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题15：器官捐赠案（总则Slide135）</div>
+<div class="q-body">甲(15岁)患重病，乙(甲父)和丙(甲母)同意由甲决定是否捐肾给甲父。医院拒绝。乙丙主张以甲的名义捐赠。说法正确的是？</div>
+<div class="q-opts"><span>A.甲的决定权应被尊重，乙丙的行为有效</span><span>B.甲死前乙丙代甲决定捐肾的行为有效</span><span>C.甲死后乙丙代甲决定捐肾的行为有效</span><span>D.甲死后乙丙代甲决定捐肾的行为无效</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ D</span><br>器官捐赠须本人<strong>生前明确同意</strong>，监护人不得代为决定捐赠未成年人器官。</div></div>
+</div>
+
+<!-- G1-7: 宣告失踪/死亡 (原§13, 🟡) -->
+<div class="card amber" id="g1-7">
+<h3>7. 宣告失踪 vs 宣告死亡 <span class="stars">★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>对比项</th><th>宣告失踪</th><th>宣告死亡</th></tr></thead>
+<tbody>
+<tr><td>条件</td><td>下落不明满<strong>2年</strong></td><td>一般<strong>4年</strong>；意外<strong>2年</strong></td></tr>
+<tr><td>效果</td><td>设定财产代管人</td><td><strong>婚姻消灭</strong>+<strong>继承开始</strong>+子女可被收养</td></tr>
+<tr><td>撤销后</td><td>代管人移交财产</td><td>婚姻恢复(再婚除外)；财产返还</td></tr>
+</tbody></table></div>
+
+<div class="q-card"><div class="q-title">📝 例题16：宣告死亡继承时间判断（总则Slide144）</div>
+<div class="q-body">甲于2010年1月20日离家出走下落不明。2014年10月20日甲父去世。哪些说法是错误的？</div>
+<div class="q-opts"><span>A.若甲被宣告死亡，甲有权继承甲父遗产</span><span>B.若甲被宣告死亡，甲父有权继承甲的遗产</span><span>C.若甲被宣告死亡，甲父不能继承</span><span>D.若甲未被宣告死亡，甲有权代位继承甲父遗产</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ ABC错误</span><br>关键是<strong>时间先后</strong>！宣告死亡以<strong>判决宣告之日</strong>为死亡日期。甲父先死亡(2014.10.20)，宣告死亡判决在后→甲父死亡时甲未被宣告，不存在继承关系。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题17：撤销死亡宣告财产返还（总则Slide148）</div>
+<div class="q-body">甲被宣告死亡，甲父乙、甲妻丙、甲子丁分割遗产。后乙病故，丁代位继承乙部分遗产。丙与戊再婚后又因车祸遇难，丁、戊又分割丙遗产。现甲重新出现。</div>
+<div class="q-opts"><span>问：财产如何返还？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 丁戊应将从丙处继承的财产返还给甲</span><br>丁从甲处继承→应返还；丁代位继承乙的→乙已合法取得，丁不返还给甲；丁和戊从丙处继承→丙是甲妻，宣告死亡后丙取得的财产应返还（但丙再婚时合法拥有部分除外）。</div></div>
+</div>
+
+<!-- G1-8: 法人制度 (原§14, 🟡) -->
+<div class="card amber" id="g1-8">
+<h3>8. 法人制度 <span class="stars">★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类型</th><th>举例</th></tr></thead>
+<tbody>
+<tr><td><strong>营利法人</strong></td><td>有限责任公司、股份有限公司、其他企业法人</td></tr>
+<tr><td><strong>非营利法人</strong></td><td>事业单位法人、社会团体法人、捐助法人（基金会、宗教场所）</td></tr>
+<tr><td><strong>特别法人</strong></td><td>机关法人、农村集体经济组织法人、合作经济组织法人、基层群众性自治组织法人（居委会/村委会）</td></tr>
+</tbody></table></div>
+<div class="highlight"><div class="hl-title">⚠️ 法定代表人</div>以法人名义从事民事活动→后果由<strong>法人承受</strong>。章程对代表权的限制<strong>不得对抗善意相对人</strong>（第61条）。</div>
+
+<div class="q-card"><div class="q-title">📝 例题18：法定代表人越权签约案（总则Slide187-189）</div>
+<div class="q-body">甲乙丙成立德利实业有限责任公司，甲为董事长（法定代表人）。章程规定动用超10万元资金须经董事会同意。甲未经乙丙协商即<strong>以公司名义</strong>与丁签订20万元采购合同。</div>
+<div class="q-opts"><span>问：(1)采购合同效力如何？(2)员工搬运中砸伤他人，谁承担？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅(1)合同有效 (2)德利公司承担</span><br>(1)章程限制<strong>不得对抗善意相对人</strong>（丁不知情）。 (2)法人对工作人员<strong>执行职务造成的损害</strong>承担民事责任（用人者责任）。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题19：法定代表人要约案（总则Slide194）</div>
+<div class="q-body">张某是甲公司法定代表人，以甲公司名义向乙公司发出要约：愿以10万元价格出售甲公司的一批货物。张某在发函后2小时因交通事故去世。乙公司回函表示愿以该价格购买。甲公司新任法定代表人以张某未经董事会同意为由拒绝。</div>
+<div class="q-opts"><span>该要约的效力？A.有效 B.效力待定 C.可撤销 D.无效</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ A（有效）</span><br>法定代表人以法人名义发出的要约，法人应承受后果。内部限制<strong>不得对抗善意相对人</strong>。张某去世不影响已发出要约效力。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题20：事业单位法人（总则Slide178）</div>
+<div class="q-body">关于事业单位法人，下列选项正确的是？</div>
+<div class="q-opts"><span>A.全部经费均来自国家财政拨款 B.具备法人条件的事业单位从成立之日起取得法人资格</span><span>C.国家举办的事业单位对其直接占有的动产享有所有权</span><span>D.事业单位法人有权提起精神损害赔偿 E.事业单位法人是不以营利为目的的法人</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ BDE</span><br>A错误—很多事业单位已有非国家拨款收入；B✓依法不需登记的从成立之日取得资格；C✗国家举办的事业单位对其占有的动产不享有所有权而是使用权；D✓法人人格权受侵害可请求精神赔偿；E✓</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题21：捐助法人（总则Slide181）</div>
+<div class="q-body">甲以家庭共有财产出资，以救助贫困病人为目的设立基金会法人。关于该基金会，下列哪一选项是正确的？</div>
+<div class="q-opts"><span>A.该基金会为社团法人，甲为创始人和出资人</span><span>B.该基金会为财团法人，甲为法定代表人</span><span>C.应由甲的家庭成员共同决定将该家庭共有财产出资</span><span>D.应由基金会法人按照章程规定，报上级主管机关批准</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ C</span><br>基金会是<strong>捐助法人（财团法人）</strong>非社团法人。以家庭共有财产出资须<strong>全体家庭成员共同决定</strong>。</div></div>
+</div>
+
+<!-- G1-9: 合伙制度 (原§19, 🟢) -->
+<div class="card green" id="g1-9">
+<h3>9. 合伙制度 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">合伙债务承担：</div>先用合伙财产清偿→不足部分→合伙人承担<strong>无限连带责任</strong></div>
+
+<div class="q-card"><div class="q-title">📝 例题22：合伙——入伙退伙+撞伤案（总则Slide161）</div>
+<div class="q-body">甲乙丙各出资20万合伙经营运输。后丁入伙，全体同意，由丁负责日常业务。某日丙退伙并收回份额，均同意。3日后，丁在运输中撞伤行人戊，需赔偿60万元。</div>
+<div class="q-opts"><span>问：(1)丁入伙是否有效？(2)60万元如何承担？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅(1)有效 (2)先由合伙财产清偿，不足由甲乙丙丁连带</span><br>(1)全体合伙人一致同意→入伙有效。(2)退伙应以退伙登记/协议完成时间为准。若丙退伙手续未办完→须承担连带责任；若已办完→对退伙后债务不担责。具体看退伙完成时间。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题23：合伙纠纷——咖啡店案（总则Slide163-164）</div>
+<div class="q-body">2022年6月，赵某、钱某、孙某共同出资合伙开咖啡店，未签书面协议。4个月后正式营业。经营中赵某负责采购+制作咖啡，钱某负责收银，孙某未参与日常经营。赵某在微信群中列出支出明细，钱某偶有回复。2022年12月底，钱某与赵某发生矛盾，钱某退出微信群。2023年6月，店铺歇业。钱某起诉要求确认合伙协议有效、核实出资比例、分割剩余资产并承担债务、要求支付工资。</div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 构成事实合伙关系</span><br>三人以<strong>口头形式达成合伙经营咖啡店的合意</strong>，有共同出资+共同经营的事实。未签书面协议<strong>不影响合同成立和效力</strong>。钱某要求支付工资的请求→<strong>不支持</strong>（合伙人不得因执行合伙事务请求报酬，有约定的除外）。</div></div>
+</div>
+
+<!-- G1-10: 民事法律行为效力 (原§15, 🟡) -->
+<div class="card amber" id="g1-10">
+<h3>10. 民事法律行为效力瑕疵 <span class="stars">★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类型</th><th>情形</th><th>法条</th></tr></thead>
+<tbody>
+<tr><td><strong>无效</strong></td><td>无行为能力人实施；虚假表示；违反强制性规定/公序良俗；恶意串通</td><td>第144/146/153/154条</td></tr>
+<tr><td><strong>可撤销</strong></td><td>重大误解；欺诈；胁迫；显失公平</td><td>第147-151条</td></tr>
+<tr><td><strong>效力待定</strong></td><td>限制行为能力人不能独立实施；无权代理</td><td>第145/171条</td></tr>
+</tbody></table></div>
+
+<div class="q-card"><div class="q-title">📝 例题24：附条件合同——喜鹊案（总则Slide262）</div>
+<div class="q-body">甲对乙说："如果7天内你家屋顶有喜鹊来，我就出10万元买你的房子。"乙同意。第二天7点几分时，恰好一群喜鹊停在乙家屋顶，乙要求甲兑现。甲不知从哪弄来弹弓把喜鹊赶走，结果7天内再没有喜鹊来过。</div>
+<div class="q-opts"><span>关于甲乙之间房屋买卖合同，正确的是？A.合同未成立 B.合同无效 C.甲有权拒绝履行 D.甲应履行</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ D（应履行）</span><br>条件"7天内有喜鹊来"<strong>已实际成就</strong>（第二天喜鹊来过）。甲赶走喜鹊属<strong>不正当地阻止条件成就</strong>→视为条件已成就（第159条）。合同生效，甲应履行。</div></div>
+</div>
+
+<!-- G1-11: 代理制度 (原§18, 🟢) -->
+<div class="card green" id="g1-11">
+<h3>11. 代理制度 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">代理类型：</div>①<strong>委托代理</strong>（基于委托合同+授权行为）②<strong>法定代理</strong>（基于法律规定，如监护人）③<strong>职务代理</strong>（法人工作人员在职权范围内）</div>
+<div class="highlight"><div class="hl-title">无权代理 vs 表见代理：</div><strong>无权代理</strong>→效力待定（本人可追认）；<strong>表见代理</strong>（相对人有理由相信有代理权）→有效，后果由本人承担（第172条）</div>
+
+<div class="q-card"><div class="q-title">📝 例题25：代理类型判断（总则Slide302）</div>
+<div class="q-body">下列哪些属于代理？</div>
+<div class="q-opts"><span>A.甲让乙从国外代购1条围巾，自己要2条，乙买了3条（间接代理）</span><span>B.甲让乙代买茶叶，乙写了茶叶品种给售货员（直接代理）</span><span>C.律师受法院指定担任甲的辩护人（指定代理）</span><span>D.甲接受乙委托参加演唱会并代签演出协议</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ AB</span><br>A是间接代理；B是直接代理；C是指定辩护非民事代理；D是行纪合同非代理。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题26：无权代理——张某卖家具案（总则Slide313）</div>
+<div class="q-body">张某有一套红木家具委托李某出售，李某花600元买了400元的假货。李某对王某说如给50万元回扣即以350万元出售。王某知红木市场不景气，只能以此价出售。李某与王某签合同。关于李某行为，正确的是？</div>
+<div class="q-opts"><span>A.李某为无权代理 B.李某与王某对张某的损失承担连带责任 C.该合同当然有效 D.该合同当然无效</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B</span><br>李某与王某<strong>恶意串通</strong>损害被代理人利益→承担<strong>连带责任</strong>。合同因恶意串通损害第三人利益而无效。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题27：表见代理——空白合同案（总则Slide321-322）</div>
+<div class="q-body">甲公司业务员乙长期代表公司签供货合同。乙辞职后，甲公司未收回盖有公章的空白合同书。乙以甲公司名义与不知情的丙签合同。甲公司拒绝履行。</div>
+<div class="q-opts"><span>问：该合同对甲公司是否有效？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 有效</span><br>构成<strong>表见代理</strong>（第172条）：①乙无代理权 ②丙有理由相信（空白合同书+公章） ③丙善意无过失→合同有效，后果由甲公司承担。甲公司可向乙追偿。</div></div>
+</div>
+
+<!-- G1-12: 诉讼时效 (原§17, 🟢) -->
+<div class="card green" id="g1-12">
+<h3>12. 诉讼时效 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">⏰ 一般诉讼时效：<strong>3年</strong></div>自权利人知道或应当知道权利受损及义务人之日起算。法院<strong>不得主动适用</strong>。</div>
+
+<div class="q-card"><div class="q-title">📝 例题28：诉讼时效——法务小张承诺书案（总则Slide186+198）</div>
+<div class="q-body">乙公司承建甲公司办公楼，验收合格后甲公司一直未付工程款，乙也未催要。<strong>诉讼时效届满后</strong>，乙公司到甲公司讨要，甲公司新录用法务小张以公司名义签署了"同意付款"和"承诺分期付款"的承诺书。</div>
+<div class="q-opts"><span>A.甲公司可主张诉讼时效抗辩 B.乙公司起诉诉讼时效中断 C.法院不应主动适用诉讼时效 D.甲公司同意履行后不能再主张时效抗辩</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ D</span><br><strong>诉讼时效届满后，义务人同意履行的，不得再以诉讼时效届满为由抗辩。</strong></div></div>
+
+<div class="q-card"><div class="q-title">📝 例题29：不适用诉讼时效的请求权（总则Slide352-353）</div>
+<div class="q-body">下列哪些请求权不适用诉讼时效制度？</div>
+<div class="q-opts"><span>A.甲请求乙排除建筑垃圾妨碍通行</span><span>B.甲以所有权人身份请求乙搬离到期租赁房屋</span><span>C.甲的表被乙强占，甲请求乙返还</span><span>D.甲与乙离婚，儿子小强(6岁)请求乙付抚养费</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 全部不适用</span><br>A停止侵害/排除妨碍→不适用；B登记的物权返还请求权→不适用；C普通动产返还→不适用；D抚养费→不适用。</div></div>
+</div>
+
+<!-- ==================== 第二编 物权 ==================== -->
+<div class="dept-title">📙 第二编 物权</div>
+
+<!-- G2-1: 物权vs债权区别 (原§1, 🔴) -->
+<div class="card red" id="g2-1">
+<h3>13. 物权与债权的区别 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>对比维度</th><th>物权</th><th>债权</th></tr></thead>
+<tbody>
+<tr><td>权利性质</td><td><strong>支配权</strong></td><td><strong>请求权</strong></td></tr>
+<tr><td>效力范围</td><td>对世权 / 绝对权</td><td>对人权 / 相对权</td></tr>
+<tr><td>排他性</td><td>✅ 有（一物一权）</td><td>❌ 平等性</td></tr>
+<tr><td>公示性</td><td>✅ 登记或交付公示</td><td>❌ 非公开</td></tr>
+<tr><td>法定 vs 自由</td><td><strong>物权法定</strong></td><td>意思自治</td></tr>
+<tr><td>客体</td><td>以物为主</td><td>以行为为客体</td></tr>
+<tr><td>存续期限</td><td>永久性 / 无期限</td><td>有存续期限</td></tr>
+</tbody></table></div>
+<div class="memo"><strong>📌 口诀：</strong>物权 = 支配+对世+排他+法定 | 债权 = 请求+对人+平等+自治</div>
+</div>
+
+<!-- G2-2: 物权法三大原则 (原§2, 🔴) -->
+<div class="card red" id="g2-2">
+<h3>14. 物权法三大基本原则 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>原则</th><th>核心内容</th><th>法条</th></tr></thead>
+<tbody>
+<tr><td>① 平等保护</td><td>国家、集体、私人物权受法律平等保护</td><td>第3条</td></tr>
+<tr><td>② 物权法定</td><td><strong>种类</strong>和<strong>内容</strong>由法律规定，不得自由创设（种类法定+内容法定+效力法定）</td><td>第116条</td></tr>
+<tr><td>③ 公示公信</td><td><strong>公示</strong>：不动产登记/动产交付；<strong>公信</strong>：信赖公示内容受保护</td><td>第208-209条</td></tr>
+</tbody></table></div>
+</div>
+
+<!-- G2-3: 物权变动模式 (原§3, 🔴) -->
+<div class="card red" id="g2-3">
+<h3>15. 物权变动模式 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类型</th><th>变动要件</th><th>法条</th></tr></thead>
+<tbody>
+<tr><td>🏠 不动产物权</td><td><strong>登记生效主义</strong>——不登记，物权不变动</td><td>第209条</td></tr>
+<tr><td>📦 普通动产</td><td><strong>交付生效主义</strong></td><td>第224条</td></tr>
+<tr><td>🚗 特殊动产(船/航空器/机动车)</td><td><strong>登记对抗主义</strong>——交付即变动，不登记不得对抗善意第三人</td><td>第225条</td></tr>
+</tbody></table></div>
+<div class="highlight"><div class="hl-title">⚠️ 非基于法律行为的物权变动</div>继承、法院判决、征收、合法建造/拆除——<strong>事实发生时</strong>即取得物权，但再处分时必须先登记！</div>
+
+<div class="q-card"><div class="q-title">📝 例题30：郑某继承房屋 + 抵押案（物权编Slide33）</div>
+<div class="q-body">郑某因公司资金困难，其父将3年前25万元购买的房屋卖给吴某，但未来得及登记即因车祸去世。郑某继承房屋并办理登记后，以该房屋抵押给关某借款10万元，<strong>未办理抵押登记</strong>。</div>
+<div class="q-opts"><span>A.郑父与吴某的房屋买卖合同有效</span><span>B.郑某享有房屋所有权</span><span>C.郑父去世后有义务协助吴某办过户</span><span>D.关某对房屋不享有抵押权</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ ABCD</span><br>A✓合同效力与登记无关（区分原则）；B✓通过继承取得；C✓继承人继续履行合同义务；D✓<strong>不动产抵押权自登记时设立</strong>，未登记=无抵押权。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题31：特殊动产——赵某购车案（物权编Slide51）</div>
+<div class="q-body">赵某向姚某购买轿车，付清全款并已交付，但<strong>未办理过户登记</strong>。后姚某因欠款被诉，法院查封了仍登记在姚某名下的该车。</div>
+<div class="q-opts"><span>问：赵某提交的《车辆买卖协议书》能否对抗法院的查封？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 不能对抗</span><br>机动车为特殊动产→<strong>登记对抗主义</strong>。虽交付取得所有权，但未登记<strong>不得对抗善意第三人</strong>（包括法院查封）。</div></div>
+</div>
+
+<!-- G2-4: 善意取得 (原§4, 🔴) -->
+<div class="card red" id="g2-4">
+<h3>16. 善意取得制度 <span class="stars">★★★★★</span> ⭐最重要</h3>
+<div class="highlight"><div class="hl-title">📜 第311条——五个构成要件</div>①让与人<strong>无处分权</strong>｜②受让人<strong>善意</strong>｜③<strong>合理价格</strong>有偿转让｜④已完成<strong>公示</strong>｜⑤转让合同<strong>有效</strong></div>
+<div class="highlight"><div class="hl-title">❌ 不适用：</div>遗失物（2年内可追回）、盗赃物、无偿赠与、所有权保留买卖未付清全款</div>
+
+<div class="q-card"><div class="q-title">📝 例题32：夫妻共有房屋被一方出售（物权编Slide72）</div>
+<div class="q-body">甲、乙婚后购得房屋一套，仅以甲名义登记。后甲擅自以时价出售给<strong>不知情</strong>的丙，并<strong>办理了转移登记</strong>。</div>
+<div class="q-opts"><span>A.买卖合同有效，所有权未转移 B.买卖合同有效，所有权已转移</span><span>C.买卖合同有效，所有权已转移 D.买卖合同无效，所有权未转移</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ C</span><br>甲属<strong>无权处分</strong>，丙善意+合理价格+已登记→<strong>善意取得</strong>。合同效力与物权变动需区分。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题33：不适用善意取得的情形（物权编Slide73-74）</div>
+<div class="q-body">下列哪一种情况下，善意第三人<strong>不能</strong>依据善意取得制度取得相应物权？</div>
+<div class="q-opts"><span>A.保留所有权买卖中未付清全款买方将标的物卖给不知情第三人</span><span>B.电脑承租人将租赁电脑向不知情债权人设定质权</span><span>C.动产质权人擅自将被质押物转给不知情第三人</span><span>D.受托代为转交物品的人将该物品<strong>赠与</strong>不知情第三人</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ D</span><br>D是<strong>赠与</strong>而非有偿转让→不满足"以合理价格转让"要件。A满足则适用；B中质权也可善意取得；C中受让人可善意取得所有权。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题34：仓储货物无权处分综合案（物权编Slide84-86）</div>
+<div class="q-body">甲公司将一批货物交乙公司仓储，乙擅自卖给不知情的丙并交付，丙付全款。后乙伪造质检报告欺诈丙，法院判决撤销合同。丙未退还货物。甲公司起诉丙返还。</div>
+<div class="q-opts"><span>A.在丙返还货物前，丙可主张善意取得 B.丙应证明自己取得时为善意</span><span>C.只要订立合同时为善意+支付合理价格即可 D.合同被撤销后丙不能主张善意取得</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ A</span><br>判断时点为<strong>交付时</strong>（非订约时），善意取得要件已满足。合同因欺诈撤销<strong>不影响</strong>善意取得。举证由原权利人证明受让人非善意。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题35：遗失物归属——手表案（物权编Slide87）</div>
+<div class="q-body">甲不慎遗失手表→乙拾得交公安机关→公告期满无人认领→寄售店出售→丁购买→赠女友戊→小偷偷走→低价卖给乙→乙送给路人丙。</div>
+<div class="q-opts"><span>手表应归谁？A.甲 B.丁 C.戊 D.丙</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ C（戊）</span><br>甲公告期满未认领→丧失所有权。丁从<strong>有经营资格的寄售店</strong>购买→合法取得。丁赠戊→戊取得。小偷/乙从非正规渠道购得均不能取得。</div></div>
+</div>
+
+<!-- G2-5: 共有 (原§5, 🔴) -->
+<div class="card red" id="g2-5">
+<h3>17. 按份共有 vs 共同共有 <span class="stars">★★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>对比项</th><th>按份共有</th><th>共同共有</th></tr></thead>
+<tbody>
+<tr><td>份额</td><td>✅ 明确份额</td><td>❌ 不分份额</td></tr>
+<tr><td>基础关系</td><td>约定</td><td>共同关系(夫妻/家庭/遗产未分割前)</td></tr>
+<tr><td>处分共有物</td><td>占份额<strong>≥2/3</strong>同意</td><td><strong>全体一致同意</strong></td></tr>
+<tr><td>份额转让</td><td>其他共有人有<strong>优先购买权</strong></td><td>共有基础丧失前无</td></tr>
+<tr><td>随时分割</td><td>✅</td><td>❌（基础丧失或重大理由时方可）</td></tr>
+<tr><td>推定规则</td><td>无约定+无家庭关系→推定为按份</td><td>有家庭关系→推定为共同</td></tr>
+</tbody></table></div>
+<div class="highlight"><div class="hl-title">⏰ 优先购买权期限</div>通知载明期间→≥15日；未载明→知悉起<strong>15日</strong>；无法确定→权属转移起<strong>6个月</strong></div>
+
+<div class="q-card"><div class="q-title">📝 例题36：共有份额转让计算（物权编Slide135）</div>
+<div class="q-body">甲乙丙丁按份共有某货物，份额分别为40%、20%、25%、15%。甲转让40%份额，乙丙丁均主张优先购买权，协商不成。如何确定购买比例？</div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 乙:(20%÷60%)×40%=13.33% | 丙:(25%÷60%)×40%=16.67% | 丁:(15%÷60%)×40%=10%</span><br>公式：各自=(自己份额÷主张者总份额)×转让份额</div></div>
+</div>
+
+<!-- G2-6: 建筑物区分所有权 (原§10, 🟡) -->
+<div class="card amber" id="g2-6">
+<h3>18. 建筑物区分所有权 <span class="stars">★★★★</span></h3>
+<div class="highlight"><div class="hl-title">三部分构成：</div>①<strong>专有权</strong>（独占） ②<strong>共有权</strong>（按份共有） ③<strong>共同管理权/成员权</strong></div>
+<div class="table-wrap"><table>
+<thead><tr><th>业主大会议题</th><th>参与表决</th><th>通过门槛</th></tr></thead>
+<tbody>
+<tr><td>一般（制定规约/选聘物业等）</td><td>面积+人数≥2/3</td><td>参与表决过半数</td></tr>
+<tr><td><strong>重大</strong>（维修资金/改建重建/改变共有用途）</td><td>面积+人数≥2/3</td><td>参与表决<strong>≥3/4</strong></td></tr>
+</tbody></table></div>
+<div class="highlight">⚠️ 住宅改经营性用房→须<strong>有利害关系业主一致同意</strong>（第279条）</div>
+
+<div class="q-card"><div class="q-title">📝 例题37：建筑物区分所有权判断（物权编Slide95）</div>
+<div class="q-body">甲乙丙丁分别购买某住宅楼一至四层。判断：①四人可分享外墙广告收入 ②一层甲对三四层楼板无共有权 ③甲出卖住宅乙丙丁有优先购买权 ④丁经乙丙同意可在楼顶建花圃 ⑤乙可分享外墙共有收益 ⑥丙可拒绝承担外墙维修费用</div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ ①②④⑤正确</span><br>①外墙广告属共有收益→全体共享 ✓<br>②楼板属该层层主专有部分 ✓<br>③业主出卖住宅<strong>其他业主无优先购买权</strong> ✗<br>④经其他共有人同意可使用共有部分 ✓<br>⑤共有权使乙可分享收益 ✓<br>⑥<strong>收益权和维修义务不可分割</strong> ✗</div></div>
+</div>
+
+<!-- G2-7: 相邻关系 (原§11, 🟡) -->
+<div class="card amber" id="g2-7">
+<h3>19. 相邻关系 <span class="stars">★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>类型</th><th>法条</th><th>核心</th></tr></thead>
+<tbody>
+<tr><td>用水排水</td><td>第290条</td><td>尊重自然流向</td></tr>
+<tr><td>通行</td><td>第291条</td><td>提供必要便利，选<strong>损失最小</strong>路线</td></tr>
+<tr><td>施工/管线</td><td>第292条</td><td>提供便利+赔偿损失</td></tr>
+<tr><td>通风采光</td><td>第293条</td><td>不得妨碍相邻方</td></tr>
+<tr><td>环境保护</td><td>第294条</td><td>不得排放污染/噪声/光污染</td></tr>
+<tr><td>安全防险</td><td>第295条</td><td>挖掘建造不危及相邻不动产</td></tr>
+</tbody></table></div>
+
+<div class="q-card"><div class="q-title">📝 例题38：修房堆放建材案（物权编Slide117）</div>
+<div class="q-body">甲乙丙比邻而居。甲修房想往乙院内堆放建材，乙不同意。甲向丙提出，丙要求付费200元+不超20天，甲同意。修房时甲搬建材须从乙门前经过，乙阻拦。</div>
+<div class="q-opts"><span>问：哪一说法<strong>不正确</strong>？A.乙无权拒绝甲在院内堆放建材 B.乙无权阻拦甲经门前搬运建材 C.甲应依约向丙付占地费 D.超20天丙有权要求清理</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ A（不正确）</span><br>A✗ 堆放建材不属"必须利用相邻不动产"→乙<strong>有权拒绝</strong>；B✓ 通行属必要相邻关系便利；C✓D✓ 明显正确。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题39：LED广告光污染案（物权编Slide121）</div>
+<div class="q-body">原告住宅对面安装LED显示屏播放广告，强光直射原告居室，严重影响生活。法院如何判决？</div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 法院判决限制LED屏开启时间+亮度</span><br>属<strong>光污染妨害</strong>（第294条），相邻方有权要求停止侵害、排除妨碍。</div></div>
+</div>
+
+<!-- G2-8: 所有权取得方式 (原§16, 🟢) -->
+<div class="card green" id="g2-8">
+<h3>20. 所有权取得方式 <span class="stars">★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>原始取得</th><th>继受取得</th></tr></thead>
+<tbody><tr><td>劳动生产、孳息、<strong>善意取得</strong>、添附(混合/附合/加工)、拾得遗失物、先占、征收</td><td>买卖、赠与、继承</td></tr></tbody></table></div>
+<div class="highlight"><div class="hl-title">🌿 孳息归属（第321条）</div><strong>天然孳息</strong>→所有权人(有用益物权人的归用益物权人) ｜<strong>法定孳息</strong>→有约从约，无约按交易习惯</div>
+</div>
+
+<!-- G2-9: 土地承包经营权 (原§22, 🟢) -->
+<div class="card green" id="g2-9">
+<h3>21. 土地承包经营权 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">设立：</div>合同生效时设立（第333条），不以登记为生效要件。但流转时登记对抗。</div>
+<div class="highlight"><div class="hl-title">"四荒地"承包：</div>可通过招标/拍卖/公开协商方式；须经村民会议<strong>2/3以上成员或2/3以上代表同意</strong>+报乡/镇政府批准</div>
+
+<div class="q-card"><div class="q-title">📝 例题40：土地承包经营权继承案（物权编Slide174）</div>
+<div class="q-body">季某承包村集体经济组织耕地30亩。季某与季小是兄弟二人，季某离婚后一直未婚。季某承包期间因病去世。关于季某的土地承包经营权，哪些说法正确？</div>
+<div class="q-opts"><span>A.土地承包经营权自合同生效时设立</span><span>B.若季某转让经营权，未办登记不发生转让效力</span><span>C.若季某死亡，季小可以继承该土地承包经营权</span><span>D.若季某死亡，季小可以继承该耕地未收割的农作物</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ AD</span><br>A✓合同生效时设立；B✗登记对抗非登记生效；C✗<strong>耕地承包经营权不可继承</strong>（林地+四荒地除外）；D✓未收割农作物属<strong>承包收益</strong>→可依法继承。</div></div>
+</div>
+
+<!-- G2-10: 担保物权 (原§9, 🟡) -->
+<div class="card amber" id="g2-10">
+<h3>22. 担保物权三大类型对比 <span class="stars">★★★★</span></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>对比项</th><th>抵押权</th><th>质权</th><th>留置权</th></tr></thead>
+<tbody>
+<tr><td>标的物</td><td>不动产/动产</td><td>动产/权利</td><td>动产</td></tr>
+<tr><td>转移占有</td><td>❌ 不转移</td><td>✅ 转移</td><td>已合法占有</td></tr>
+<tr><td>设立方式</td><td>约定</td><td>约定</td><td>⚡ 法定</td></tr>
+<tr><td>不动产设立</td><td>登记生效</td><td>—</td><td>—</td></tr>
+<tr><td>动产设立</td><td>登记对抗</td><td>交付生效</td><td>法定条件满足时</td></tr>
+</tbody></table></div>
+<div class="highlight"><div class="hl-title">📌 口诀：</div>不动产抵、动产质、法定留置</div>
+
+<div class="q-card"><div class="q-title">📝 例题41：抵押权顺序与优先受偿（物权编Slide286+318-319）</div>
+<div class="q-body">甲公司以同一动产分别向A（未登记）、B（设定质权）、C（已登记抵押）借款。到期无法清偿，谁优先受偿？</div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ B质权 > C已登记抵押权 > A未登记抵押权</span><br>质权以交付/占有时间为准（最先）> 已登记抵押权（登记时间）> 未登记抵押权（不得对抗任何已公示的担保物权）。《民法典》第415条：登记与交付同等公示效力。</div></div>
+
+<div class="q-card"><div class="q-title">📝 例题42：抵押权顺位变更（物权编Slide318）</div>
+<div class="q-body">黄河公司以房屋先后抵押给甲(100万)、乙(300万)、丙(500万)，依次登记。后甲丙协商互换顺位并办理变更登记，乙不知情。房屋拍卖得600万。</div>
+<div class="q-opts"><span>问：如何分配？</span></div>
+<button class="ans-toggle" onclick="toggleAns(this)">点击查看答案</button>
+<div class="ans-content"><span class="correct">✅ 甲100万、乙300万、丙200万</span><br>甲丙顺位互换<strong>不得对乙造成不利影响</strong>。乙保持第二顺位，获300万；甲第一顺位获100万；丙第三顺位获剩余200万。</div></div>
+</div>
+
+<!-- G2-11: 占有 (原§23, 🟢) -->
+<div class="card green" id="g2-11">
+<h3>23. 占有 <span class="stars">★★★</span></h3>
+<div class="highlight"><div class="hl-title">占有分类：</div>有权占有 vs 无权占有 → 善意占有 vs 恶意占有 | 直接占有 vs 间接占有</div>
+<div class="highlight"><div class="hl-title">占有保护请求权：</div>返还原物、排除妨害、消除危险（不适用诉讼时效）</div>
+</div>
+
+<!-- ==================== 附录 ==================== -->
+<div class="dept-title" style="border-left-color:var(--green)">📋 附录</div>
+
+<div class="card green" id="f1">
+<h3>📜 必背法条号</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>法条</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>第3-9条</td><td>七大基本原则</td></tr>
+<tr><td>第13条</td><td>自然人权利能力：始于出生，终于死亡</td></tr>
+<tr><td>第17-20条</td><td>民事行为能力三分（18岁/8岁分界，16岁+劳动收入视为完全）</td></tr>
+<tr><td>第61条</td><td>法定代表人代表权限制不得对抗善意相对人</td></tr>
+<tr><td>第159条</td><td>附条件法律行为——不正当阻止/促成条件成就</td></tr>
+<tr><td>第172条</td><td>表见代理</td></tr>
+<tr><td>第209条</td><td>不动产物权登记生效</td></tr>
+<tr><td>第215条</td><td>物权区分原则（未登记不影响合同效力）</td></tr>
+<tr><td>第224条</td><td>动产物权交付生效</td></tr>
+<tr><td>第225条</td><td>特殊动产登记对抗</td></tr>
+<tr><td>第278条</td><td>业主共同决定事项及表决规则</td></tr>
+<tr><td>第303条</td><td>共有物分割请求权</td></tr>
+<tr><td><strong>第311条</strong></td><td><strong>善意取得制度</strong></td></tr>
+<tr><td>第321条</td><td>孳息归属</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="card green" id="f2">
+<h3>🧠 记忆口诀汇总</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>口诀</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td><strong>权平自愿公，诚信守绿法</strong></td><td>七大民法基本原则</td></tr>
+<tr><td><strong>支配+对世+排他+法定</strong></td><td>物权四大特征</td></tr>
+<tr><td><strong>不动产抵、动产质、法定留置</strong></td><td>三大担保物权区分</td></tr>
+<tr><td><strong>无权+善意+有价+公示+有效</strong></td><td>善意取得五要件</td></tr>
+<tr><td><strong>按份2/3，共同全同意</strong></td><td>共有物处分表决比例</td></tr>
+<tr><td><strong>完限无，18/8分</strong></td><td>民事行为能力三分</td></tr>
+<tr><td><strong>3年时效不主动，同意履行不反悔</strong></td><td>诉讼时效</td></tr>
+<tr><td><strong>不动登记动交付，特殊动产登记抗</strong></td><td>物权变动模式</td></tr>
+</tbody></table></div>
+</div>
+
+</main>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">↑</button>
+
+<script>
+function toggleAns(btn){const c=btn.nextElementSibling;const o=c.classList.contains('show');c.classList.toggle('show');btn.classList.toggle('shown');btn.textContent=o?'点击查看答案':'▲ 收起答案'}
+window.addEventListener('scroll',()=>{
+const st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+document.getElementById('progress').style.width=sh>0?(st/sh)*100+'%':'0%';
+document.getElementById('btt').classList.toggle('visible',st>600);
+});
+document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>
