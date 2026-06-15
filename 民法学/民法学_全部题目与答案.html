@@ -31,11 +31,12 @@ td,th{padding:6px 10px;border:1px solid #ddd}
 @media(max-width:860px){#sidebar{display:none}#main{margin-left:0;padding:16px}}
 
 blockquote.ans {cursor:pointer;position:relative}
-blockquote.ans p:first-child::after {content:" ▸ 点击展开";font-size:12px;color:var(--green);margin-left:8px}
-blockquote.ans.open p:first-child::after {content:" ▾ 收起"}
+
+
 blockquote.ans p {display:none}
-blockquote.ans p:first-child {display:block}
 blockquote.ans.open p {display:block}
+blockquote.ans::before {content:"▸ 点击展开答案与解析";font-size:13px;color:var(--green);font-weight:bold}
+blockquote.ans.open::before {display:none}
 
 </style>
 </head>
