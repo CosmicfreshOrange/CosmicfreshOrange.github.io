@@ -1,11 +1,11 @@
-export default {
+const MATHJAX = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    packages: {'[+]': ['base', 'ams', 'noerrors', 'noundefined', 'color']}
-  },
-  options: {
-    ignoreHtmlClass: 'tex2jax_ignore',
-    processHtmlClass: 'tex2jax_process'
+    packages: {
+      '[+]': ['base', 'ams', 'noerrors', 'noundefined', 'color']
+    }
   }
 };
+
+export { MATHJAX };
