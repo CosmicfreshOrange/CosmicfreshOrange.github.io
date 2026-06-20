@@ -7,8 +7,6 @@ tags: [分式规划, 线性规划, Charnes-Cooper, DEA, 考研, 数学变换]
 math: true
 ---
 
-$\require{color}$
-
 ## 一、题目（中国科技大学 2013 年考研）
 
 将分式规划转化为线性规划：
