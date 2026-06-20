@@ -49,6 +49,7 @@ $$
 
 **修复**：创建 `_includes/js-selector.html` 覆盖主题文件，砍掉 polyfill，配置内联，直接用 jsdelivr CDN。
 
+{% raw %}
 ```html
 {% if page.math %}
   <script>
@@ -63,6 +64,7 @@ $$
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 {% endif %}
 ```
+{% endraw %}
 
 （Chirpy 7.6.0 其实已经去掉了 polyfill，但 7.5 还有。）
 
@@ -76,7 +78,7 @@ $$
 <title> | CosOrange</title>
 ```
 
-这说明 Jekyll 根本没读到 `page.title`——**frontmatter 解析失败了**。`page.math` 自然也不生效，`js-selector.html` 里的 `{% if page.math %}` 永远是 false。
+这说明 Jekyll 根本没读到 `page.title`——**frontmatter 解析失败了**。`page.math` 自然也变成 `false`，`js-selector.html` 里的 `if page.math` 条件永远不成立。
 
 用 `xxd` 看 description 字段的十六进制：
 
